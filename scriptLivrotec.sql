@@ -46,6 +46,7 @@ create table lugar_fila
 	nm_email_usuario VARCHAR(200),
 	nm_isbn VARCHAR(10),
 	cd_lugar_fila INT,
+	dt_entrada_fila DATETIME,
 	CONSTRAINT pk_lugar_fila PRIMARY KEY (nm_email_usuario, nm_isbn),
 	CONSTRAINT fk_usuario_lugar_fila FOREIGN KEY (nm_email_usuario) 
 		REFERENCES usuario(nm_email_usuario),

@@ -91,7 +91,7 @@ begin
 	if lugar is null then
 		set lugar = 1;
 	end if;
-	Insert into lugar_fila values (vEmail, vISBN, lugar);
+	Insert into lugar_fila values (vEmail, vISBN, lugar, now());
 	call CriarEmprestimo(vEmail, vISBN);
 end$$
 
@@ -186,7 +186,10 @@ end$$
 Drop Procedure if Exists cancelarEmprestimo$$
 Create Procedure cancelarEmprestimo(vCodigo int)
 begin
+	declare email text;
+	select nm_email_usuario into email from emprestimo where cd_emprestimo = vCodigo;
 	delete from emprestimo where cd_emprestimo = vCodigo;
+	call automatizarEmprestimo(email);
 end$$
 
 Drop Procedure if Exists contarFilaPessoa$$
@@ -230,9 +233,12 @@ Drop Procedure if Exists confirmarDevolucao$$
 Create Procedure confirmarDevolucao(vCodigo varchar(200))
 begin
 	declare isbn text;
+	declare email text;
+	select nm_email_usuario into email from emprestimo where cd_emprestimo = vCodigo;
 	update emprestimo set dt_devolucao_efetiva_emprestimo = curDate() where cd_emprestimo = vCodigo;
 	select nm_isbn into isbn from emprestimo where cd_emprestimo = vCodigo;
 	update livro set qt_livro = qt_livro+1 where nm_isbn = isbn;
+	call automatizarEmprestimo(email);
 end$$
 
 Drop Procedure if Exists confirmarDoacaoLivroExistente$$
@@ -313,6 +319,14 @@ Drop Procedure if Exists emprestimoRoubado$$
 Create Procedure emprestimoRoubado(vCodigo varchar(200))
 begin
     update emprestimo set ic_roubado = true where cd_emprestimo = vCodigo;
+end$$
+
+Drop Procedure if Exists automatizarEmprestimo$$
+Create Procedure automatizarEmprestimo(vEmail varchar(200))
+begin
+	declare codigo text;
+	select nm_isbn into codigo from lugar_fila where nm_email_usuario = vEmail order by dt_entrada_fila asc limit 1;
+	call CriarEmprestimo(vEmail, codigo);
 end$$
 
 
