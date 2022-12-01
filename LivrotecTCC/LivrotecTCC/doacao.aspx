@@ -33,7 +33,7 @@
             </div>
         </header>
 
-        <main id="mainLogin">
+        <main id="doacao">
             <div>
                 <section style="text-align:center;">
                     <h2>Nova Doação</h2>

@@ -25,6 +25,17 @@ namespace LivrotecTCC
                 icone.Visible = true;
                 dropdown.Visible = true;
                 litInicialEmail.Text = "<p>" + Email.Substring(0, 1).ToUpper() + "</p>";
+                string emailUsuario = cookie["Email"];
+
+                string emailUrl = Request["email"];
+
+       
+
+                if (emailUrl != emailUsuario)
+                {
+                    Response.Redirect("login.aspx");
+                }
+
                 cookie.HttpOnly = true;
             }
             else
