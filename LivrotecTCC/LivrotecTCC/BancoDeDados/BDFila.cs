@@ -32,14 +32,14 @@ namespace LivrotecTCC
             }
             else 
             {
-            if (tamanho == 1)
-            {
-                return "Existe " + tamanho.ToString() + " pessoa nessa fila";
-            }
-            else
-            {
-                return "Existem " + tamanho.ToString() + " pessoas nessa fila";
-            }
+                if (tamanho == 1)
+                {
+                    return "Existe " + tamanho.ToString() + " pessoa nessa fila";
+                }
+                else
+                {
+                    return "Existem " + tamanho.ToString() + " pessoas nessa fila";
+                }
             }
         }
         public EstadoUsuarioFila EstadoUsuario(string email, string isbn){            

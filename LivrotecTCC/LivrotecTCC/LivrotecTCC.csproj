@@ -106,6 +106,7 @@
     <Content Include="css\estilo.css" />
     <Content Include="doacao.aspx" />
     <Content Include="doacoes.aspx" />
+    <Content Include="editarlivro.aspx" />
     <Content Include="emprestimo.aspx" />
     <Content Include="emprestimos.aspx" />
     <Content Include="imagens\capaFrankestein.jpg" />
@@ -167,6 +168,13 @@
     </Compile>
     <Compile Include="doacoes.aspx.designer.cs">
       <DependentUpon>doacoes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editarlivro.aspx.cs">
+      <DependentUpon>editarlivro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editarlivro.aspx.designer.cs">
+      <DependentUpon>editarlivro.aspx</DependentUpon>
     </Compile>
     <Compile Include="emprestimo.aspx.cs">
       <DependentUpon>emprestimo.aspx</DependentUpon>

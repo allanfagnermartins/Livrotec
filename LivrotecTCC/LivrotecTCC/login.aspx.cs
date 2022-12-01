@@ -23,23 +23,13 @@ namespace LivrotecTCC
                 HttpCookie cookie = Request.Cookies["loginUsuario"];
 
                 if (BD.Usuarios.VerificarAdmin(cookie["Email"]))
-                {
-                    Response.Redirect("admin.aspx");
-                    email.Text = "";
-                    senha.Text = "";
-                }
+                    Response.Redirect("admin.aspx"); 
                 else
-                {
-                    Response.Redirect("index.aspx?email=" + cookie["Email"]);
-                    email.Text = "";
-                    senha.Text = "";
-                }
-            }
-            else
-            {
+                    Response.Redirect("index.aspx");
 
-            }
-
+                email.Text = "";
+                senha.Text = "";
+            } 
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)

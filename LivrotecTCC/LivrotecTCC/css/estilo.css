@@ -208,7 +208,7 @@ body {
     color: #8A6B32;
 }
 
-#btnInfoLivro {
+.btnLivro {
     width: 250px;
     height: 35px;
     background-color: #8A6B32;

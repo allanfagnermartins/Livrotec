@@ -25,10 +25,6 @@
                     <img src="imagens/LogoLivrotec.png"/ class="logoLivrotec">
                 </div>
             </a>
-            <div id="areaUsuario">
-                <div id="notificacoesUsuario"></div>
-                <div id="funcoesUsuario"></div>
-            </div>
         </header>
 
         <main id="mainLogin">

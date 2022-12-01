@@ -35,6 +35,8 @@ namespace LivrotecTCC
                 Email = cookie["Email"];
                 icone.Visible = true;
                 dropdown.Visible = true;
+                if (BD.Usuarios.VerificarAdmin(cookie["Email"]))
+                    Response.Redirect("admin.aspx");
             }
             
             if (Email == "" || Email == null)

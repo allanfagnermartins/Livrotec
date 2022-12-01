@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="livroadmin.aspx.cs" Inherits="LivrotecTCC.livroAdmin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="editarlivro.aspx.cs" Inherits="LivrotecTCC.editarlivro" %>
 
 <!DOCTYPE html>
 
@@ -24,7 +24,8 @@
                     <img src="imagens/LogoLivrotec.png"/ class="logoLivrotec">
                 </div>
             </a>
-             
+
+ 
 
            <section class="icone" id="icone" runat="server"> <p><%=  this.Email?.Substring(0, 1)?.ToUpper()  %> </p> </section>
             <div class="dropdown" id ="dropdown" runat="server">
@@ -43,26 +44,7 @@
         </header>
 
 
-        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-            <asp:UpdatePanel ID="up1" runat="server">
-                <ContentTemplate>
-                    <main id="areaLivro">
-                        <div id="areaFotoLivro">
-                            <asp:Literal ID="litImagemLivro" runat="server"></asp:Literal>
-                        </div>
-                        <div id="areaInfoLivro">
-                            <asp:Literal ID="litTituloLivro" runat="server"></asp:Literal>
-                            <asp:Literal ID="litCategoriasLivro" runat="server"></asp:Literal>
-                            <p id="tituloSinopseLivro">Sinopse</p>
-                            <asp:Literal ID="litSinopseLivro" runat="server"></asp:Literal>
-                            <section id="secQtBtnLivro">
-                                <asp:Button ID="btnEditarLivro" CssClass="btnLivro" runat="server" Text="SOCORRO" OnClick="btnEditarLivro_Click" />
-                                <asp:Literal ID="litQuantidadeFila" runat="server"></asp:Literal>
-                            </section>
-                        </div>
-                    </main>
-                </ContentTemplate>
-            </asp:UpdatePanel>
+ 
 
 
     </form>

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace LivrotecTCC
 {
-    public partial class admin : System.Web.UI.Page
+    public partial class editarlivro : System.Web.UI.Page
     {
         public string Email;
         protected void Page_Load(object sender, EventArgs e)
@@ -15,16 +15,16 @@ namespace LivrotecTCC
             HttpCookie cookie = Request.Cookies["loginUsuario"];
 
             if (cookie == null)
-            { 
+            {
+                icone.Visible = false;
                 dropdown.Visible = false;
             }
 
             if (cookie == null)
                 Response.Redirect("login.aspx");
-
             Email = cookie["Email"];
+            icone.Visible = true;
             dropdown.Visible = true;
-
 
             cookie.HttpOnly = true;
         }

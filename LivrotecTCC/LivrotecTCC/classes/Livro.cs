@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace LivrotecTCC
 {
-    class Livro
+    public class Livro
     {
         public string ISBN { get; set; }
         public string Nome { get; set; }

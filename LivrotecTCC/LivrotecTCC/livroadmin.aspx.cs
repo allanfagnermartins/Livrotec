@@ -9,36 +9,56 @@ namespace LivrotecTCC
 {
     public partial class livroAdmin : System.Web.UI.Page
     {
-        string Email;
+
+        public string Email;
+        string ISBN;
+        BancoDeDados BD = new BancoDeDados();
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            Response.Cache.SetCacheability(HttpCacheability.NoCache);
-            Response.Cache.SetMaxAge(TimeSpan.Zero);
-            Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches);
-            Response.Cache.SetNoStore();
             HttpCookie cookie = Request.Cookies["loginUsuario"];
+            ISBN = Request["cd"];
+            Email = Request["email"];
 
-            litLogin.Text = "Login";
 
             if (cookie == null)
                 Response.Redirect("login.aspx");
 
             if (cookie != null)
             {
-                litLogin.Text = "";
                 Email = cookie["Email"];
                 icone.Visible = true;
                 dropdown.Visible = true;
-                litInicialEmail.Text = "<p>" + Email.Substring(0, 1).ToUpper() + "</p>";
-
-                if (Email == "" || Email == null)
-                {
-                    Response.Redirect("index.aspx");
-                } 
             }
 
-        } 
+            if (ISBN == null || Email == null)
+                Response.Redirect("login.aspx");
+            
+            CarregarInfosLivro();
+
+        }
+
+ 
+
+
+        void CarregarInfosLivro()
+        {
+            Livro livro = BD.Livros.Consultar(ISBN);
+            var quantidade = BD.Filas.Tamanho(ISBN);
+
+
+
+            litImagemLivro.Text = $"<img id='imgInfoLivro' src='imagens/{livro.Caminho}.jpg'></img>";
+            litTituloLivro.Text = $"<p id='pTituloLivro'>{ livro.Nome }</p>";
+            litSinopseLivro.Text = $"<p id='pSinopseLivro'>{ livro.Sinopse }</p>";
+            litQuantidadeFila.Text = $"<p id='QtPessoasFila'>{ quantidade }</p>";
+
+
+        }
+
+        protected void btnEditarLivro_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("editarlivro.aspx");
+        }
 
         protected void btnSair_Click(object sender, EventArgs e)
         {
@@ -48,5 +68,6 @@ namespace LivrotecTCC
             }
             Response.Redirect("index.aspx");
         }
+
     }
 }

@@ -11,7 +11,7 @@ namespace LivrotecTCC
 {
 
 
-    public partial class admin
+    public partial class editarlivro
     {
 
         /// <summary>

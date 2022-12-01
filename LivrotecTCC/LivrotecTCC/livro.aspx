@@ -65,7 +65,7 @@
                             <p id="tituloSinopseLivro">Sinopse</p>
                             <asp:Literal ID="litSinopseLivro" runat="server"></asp:Literal>
                             <section id="secQtBtnLivro">
-                                <asp:Button ID="btnInfoLivro" runat="server" Text="Button" OnClick="btnInfoLivro_Click" />
+                                <asp:Button ID="btnInfoLivro" runat="server" class="btnLivro" Text="Button" OnClick="btnInfoLivro_Click" />
                                 <asp:Literal ID="litQuantidadeFila" runat="server"></asp:Literal>
                             </section>
                         </div>

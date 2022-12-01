@@ -28,7 +28,6 @@
                 </div>
             </a>
 
-
            <section class="icone" id="icone" runat="server"> <p><%=  this.Email?.Substring(0, 1)?.ToUpper()  %> </p> </section>
             <div class="dropdown" id ="dropdown" runat="server">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -54,7 +53,7 @@
         <main class="areaLivros" id="MainTodasFilas" runat="server" visible="false">
             <asp:Repeater id="FilasRepeater" runat="server"> 
                 <ItemTemplate>
-                    <a href='livro.aspx?cd=<%# Eval("ISBN") %>&email=<%#this.Email%> }' class = 'cardFila'>
+                    <a href='livroadmin.aspx?cd=<%# Eval("ISBN") %>&email=<%#this.Email%> }' class = 'cardFila'>
                         <img src='imagens/<%# Eval("Caminho") %>.jpg'  class='imgLivro' alt='capa do livro '<%# Eval("Nome") %>>
                         <p id='titulo'><%# Eval("Nome") %></p>
                     </a> 
