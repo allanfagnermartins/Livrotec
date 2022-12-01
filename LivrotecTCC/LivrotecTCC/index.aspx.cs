@@ -62,17 +62,19 @@ namespace LivrotecTCC
             HttpCookie cookie = Request.Cookies["loginUsuario"];
             Email = cookie["Email"];
             MainOutrasFilas.Visible = true;
-            bool InscritoAlgumaFila = BD.Usuarios.ContarFilaPessoa(Email) >= 1;
-            MainMeusLivros.Visible = InscritoAlgumaFila;
-            TituloNaoMinhasFilas.Visible = InscritoAlgumaFila;
-            TituloMinhasFilas.Visible = InscritoAlgumaFila;
+
             List<Livro> listaLivros = BD.Livros.ConsultarMeus(Email);
             MinhasFilasRepeater.DataSource = listaLivros;
             MinhasFilasRepeater.DataBind();
 
             List<Livro> listaNaoLivros = BD.Livros.ConsultarNaoMeus(Email);
             OutrasFilasRepeater.DataSource = listaNaoLivros;
-            OutrasFilasRepeater.DataBind(); 
+            OutrasFilasRepeater.DataBind();
+
+            bool InscritoAlgumaFila = listaLivros.Count() >= 1;
+            MainMeusLivros.Visible = InscritoAlgumaFila;
+            TituloNaoMinhasFilas.Visible = InscritoAlgumaFila;
+            TituloMinhasFilas.Visible = InscritoAlgumaFila;
 
         }
         protected void btnSair_Click(object sender, EventArgs e)

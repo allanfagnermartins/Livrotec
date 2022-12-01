@@ -17,7 +17,7 @@ end$$
 Drop Procedure if Exists listarLivrosPessoa$$
 Create Procedure listarLivrosPessoa(vEmail varchar(200))
 begin
-	select * from livro l left join lugar_fila lf on (l.nm_isbn = lf.nm_isbn) where nm_email_usuario = vEmail or l.nm_isbn in (select nm_isbn from emprestimo where nm_email_usuario = vEmail and dt_devolucao_efetiva_emprestimo is null);
+	select * from livro l left join lugar_fila lf on (l.nm_isbn = lf.nm_isbn) where nm_email_usuario = vEmail or l.nm_isbn in (select nm_isbn from emprestimo where nm_email_usuario = vEmail and dt_devolucao_efetiva_emprestimo is null and ic_roubado = false);
 end$$
 
 Drop Procedure if Exists listarLivrosNaoPessoa$$
@@ -297,28 +297,34 @@ begin
     end if;
 end$$
 
-Drop Procedure if Exists editarSinopse$$
-Create Procedure editarSinopse(vISBN varchar(200), vSinopse TEXT)
+Drop Procedure if Exists adicionarAtraso$$
+Create Procedure adicionarAtraso(vCodigo varchar(200))
 begin
-    update livro set ds_sinopse = vSinopse where nm_isbn = vISBN;
-end$$
 
-Drop Procedure if Exists editarNome$$
-Create Procedure editarNome(vISBN varchar(200), vNome TEXT)
-begin
-    update livro set nm_livro = vNome where nm_isbn = vISBN;
-end$$
+	declare email text;
+	declare quantidade int;
+	declare dataprevista text;
+	declare dias int;
 
-Drop Procedure if Exists editarCaminhoFotoLivro$$
-Create Procedure editarCaminhoFotoLivro(vISBN varchar(200), vCaminhoFotoLivro TEXT)
-begin
-    update livro set nm_caminho_foto_livro = vNome where nm_isbn = vISBN;
+	select nm_email_usuario into email from emprestimo where cd_emprestimo = vCodigo;
+	select qt_atrasos_usuario into quantidade from usuario where nm_email_usuario = email;
+	select dt_devolucao_prevista_emprestimo into dataprevista from emprestimo where cd_emprestimo = vCodigo;
+
+	set dias = DATEDIFF(dataprevista, curDATE());
+
+	if dias < 1 then
+		update usuario set qt_atrasos = quantidade+1 where nm_email_usuario = email;
+	end if;
+
+	select count(*) from usuario where qt_atrasos_usuario = 0 or null and nm_email_usuario = email;
+
 end$$
 
 Drop Procedure if Exists emprestimoRoubado$$
 Create Procedure emprestimoRoubado(vCodigo varchar(200))
 begin
 	declare email text;
+
 	select nm_email_usuario into email from emprestimo where cd_emprestimo = vCodigo;
     update emprestimo set ic_roubado = true where cd_emprestimo = vCodigo;
 	call adicionarRoubo(email);
@@ -346,12 +352,3 @@ begin
 		update usuario set ic_restrito_emprestimo = true;
 	end if;
 end$$
-
-Drop Procedure if Exists cadastrarUsuario$$
-Create Procedure cadastrarUsuario(vEmail varchar(200), vSenha varchar(64), vNome varchar(150), vTelefone varchar(20), vCPF varchar(20))
-begin
-	insert into usuario values (vEmail, 2, vSenha, vNome, vTelefone, vCPF, false, null, 0, 0, 0);
-end$$
-
-
-Delimiter ;

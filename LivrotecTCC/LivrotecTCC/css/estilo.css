@@ -536,8 +536,11 @@ body {
 
 .avisoImportante {
     text-align:center;
-    color: #FF0000;
 }
+
+    .avisoImportante a {
+        color: #8A6B32;
+    }
 
 .secDuvidas {
     background-color: #232F3E;

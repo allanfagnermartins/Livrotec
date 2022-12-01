@@ -76,48 +76,57 @@ namespace LivrotecTCC
             var codigoEmprestimo = BD.Emprestimos.CodigoEmprestimo(Email, ISBN);
             var posicao = BD.Filas.Posicao(Email, ISBN);
             var quantidade = BD.Filas.Tamanho(ISBN);
+            if (posicao == null)
+            {
 
-   
+                if (BD.Emprestimos.ChecarEmprestimoLivro(Email, ISBN))
+                {
 
-            litImagemLivro.Text = $"<img id='imgInfoLivro' src='imagens/{livro.Caminho}.jpg'></img>";
-            litTituloLivro.Text = $"<p id='pTituloLivro'>{ livro.Nome }</p>";
-            litSinopseLivro.Text = $"<p id='pSinopseLivro'>{ livro.Sinopse }</p>";
-            
-            if (Request["email"] == null)
-            {
-                return;
-            }
+                    if (BD.Emprestimos.ChecarEmprestimo(Email))
+                    {
+                        if (BD.Emprestimos.ConsultarRoubos(Email))
+                        {
+                            btnInfoLivro.Visible = false;
+                            litQuantidadeFila.Text = $"<p class='avisoImportante'> Você roubou um livro, verifique como proceder <a href='duvidas.aspx'>aqui!</a></p>";
+                        }
+                        else
+                        {
+                            if (BD.Emprestimos.ChecarEmprestimoConfirmado(codigoEmprestimo.ToString()))
+                            {
+                                var dias = BD.Emprestimos.DiasRestantes(codigoEmprestimo.ToString());
+                                btnInfoLivro.Visible = false;
+                                litQuantidadeFila.Text = $"<p class='avisoImportante'> Você tem {dias} dias restantes em seu empréstimo</p>";
+                            }
 
-            if (posicao != null)
-            {
-                litQuantidadeFila.Text = $"<p id='QtPessoasFila'>Sua posição na fila: {posicao}</p>";
-                return;
-            }
+                            else
+                            {
+                                btnInfoLivro.Visible = false;
+                                litQuantidadeFila.Text = $"<p class='avisoImportante'> Venha buscar seu livro na unidade escolar!</p>";
+                            }
 
-            if (!BD.Emprestimos.ChecarEmprestimoLivro(Email, ISBN))
-            {
-                litQuantidadeFila.Text = $"<p id='QtPessoasFila'>{quantidade}</p>";
-                return;
-            }
-            if (!BD.Emprestimos.ChecarEmprestimo(Email))
-            {
-                return;
-            }
-            btnInfoLivro.Visible = false;
+                        }
+                    }
 
-            if (BD.Emprestimos.ConsultarRoubos(codigoEmprestimo.ToString()))
-            {
-                litQuantidadeFila.Text = $"<p class='avisoImportante'> Você roubou um livro, verifique como proceder na unidade mais próxima! </p>";
-            }
-            else if (BD.Emprestimos.ChecarEmprestimoConfirmado(codigoEmprestimo.ToString()))
-            {
-                var dias = BD.Emprestimos.DiasRestantes(codigoEmprestimo.ToString());
-                litQuantidadeFila.Text = $"<p class='avisoImportante'> Você tem {dias} dias restantes em seu empréstimo</p>";
+                }
+                else
+                {
+                    if (BD.Emprestimos.ConsultarRoubos(Email))
+                    {
+                        btnInfoLivro.Visible = false;
+                        litQuantidadeFila.Text = $"<p class='avisoImportante'> Você roubou um livro, verifique como proceder <a href='duvidas.aspx'>aqui!</a></p>";
+                    }
+                    else
+                    {
+                        litQuantidadeFila.Text = $"<p id='QtPessoasFila'>{quantidade}</p>";
+                    }
+                }
+
             }
             else
             {
-                litQuantidadeFila.Text = $"<p class='avisoImportante'> Venha buscar seu livro na unidade escolar!</p>";
+                litQuantidadeFila.Text = $"<p id='QtPessoasFila'>Sua posição na fila: {posicao}</p>";
             }
+
 
         }
 
