@@ -318,7 +318,10 @@ end$$
 Drop Procedure if Exists emprestimoRoubado$$
 Create Procedure emprestimoRoubado(vCodigo varchar(200))
 begin
+	declare email text;
+	select nm_email_usuario into email from emprestimo where cd_emprestimo = vCodigo;
     update emprestimo set ic_roubado = true where cd_emprestimo = vCodigo;
+	call adicionarRoubo(email);
 end$$
 
 Drop Procedure if Exists automatizarEmprestimo$$
@@ -327,6 +330,21 @@ begin
 	declare codigo text;
 	select nm_isbn into codigo from lugar_fila where nm_email_usuario = vEmail order by dt_entrada_fila asc limit 1;
 	call CriarEmprestimo(vEmail, codigo);
+end$$
+
+Drop Procedure if Exists adicionarRoubo$$
+Create Procedure adicionarRoubo(vEmail varchar(200))
+begin
+	declare quantidade int;
+	declare situacao bool;
+
+	select qt_roubos_usuario into quantidade from usuario where nm_email_usuario = vEmail;
+	select ic_restrito_emprestimo into situacao from usuario where nm_email_usuario = vEmail;
+
+	update usuario set qt_roubos_usuario = quantidade +1 where nm_email_usuario = vEmail;
+	if situacao = false then
+		update usuario set ic_restrito_emprestimo = true;
+	end if;
 end$$
 
 

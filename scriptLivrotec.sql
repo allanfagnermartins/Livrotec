@@ -28,7 +28,7 @@ Create table usuario
 	nm_usuario varchar(150) not null,
 	nm_telefone_usuario varchar(20) not null,
 	nm_cpf_usuario varchar(20) not null,
-	ic_restristo_emprestimo boolean,
+	ic_restrito_emprestimo boolean,
 	dt_bloqueio_restricao date,
 	qt_atrasos_usuario int not null,
 	qt_roubos_usuario int not null,
