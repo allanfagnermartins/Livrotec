@@ -347,5 +347,11 @@ begin
 	end if;
 end$$
 
+Drop Procedure if Exists cadastrarUsuario$$
+Create Procedure cadastrarUsuario(vEmail varchar(200), vSenha varchar(64), vNome varchar(150), vTelefone varchar(20), vCPF varchar(20))
+begin
+	insert into usuario values (vEmail, 2, vSenha, vNome, vTelefone, vCPF, false, null, 0, 0, 0);
+end$$
+
 
 Delimiter ;

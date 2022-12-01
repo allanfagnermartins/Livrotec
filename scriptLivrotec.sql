@@ -32,7 +32,6 @@ Create table usuario
 	dt_bloqueio_restricao date,
 	qt_atrasos_usuario int not null,
 	qt_roubos_usuario int not null,
-	qt_livros_doados_usuario int,
 	constraint pk_usuario primary key (nm_email_usuario),
 	constraint fk_tipo_usuario_usuario foreign key (cd_tipo_usuario) 
 		references tipo_usuario(cd_tipo_usuario),
