@@ -17,6 +17,9 @@ body {
 }
 
 #headerTelaPrincipal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     background-color: #232F3E;
     height: 80px;
     position: sticky;
@@ -39,16 +42,44 @@ body {
 
 .areaLivros {
     max-width: 85%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 35px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 24px;
     margin: auto;
 }
 
+@media (min-width: 640px) {
+    .areaLivros {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .areaLivros {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .areaLivros {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1280px) {
+    .areaLivros {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (min-width: 1536px) {
+    .areaLivros {
+        grid-template-columns: repeat(6, 1fr);
+    }
+} 
+
 .cardFila {
-    width: 210px;
     height: 265px;
     border-radius: 20px;
     border-color: #232F3E;
@@ -62,6 +93,10 @@ body {
     text-decoration: none;
     color: black;
     font-family: 'hind-kochi-medium-3', sans-serif;
+}
+
+.cardFila:hover {
+    background-color: #e9ecef;
 }
 
 #titulo {
@@ -97,6 +132,7 @@ body {
     position: relative;
     right: 0%;
     cursor: pointer;
+    color: white;
 }
 
 .imgLivro {
@@ -114,7 +150,6 @@ body {
     left: 50%;
     top: calc(50% + 40px);
     transform: translate(-50%, -50%);
-    border: 2px solid #8A6B32;
     border-radius: 15px;
     font-family: 'hind-kochi-medium-3', sans-serif;
     background-color: #232F3E;
@@ -130,6 +165,14 @@ body {
     padding-top: 2%;
     width:100%;
 }
+
+@media (max-width: 1024px) {
+    #imgInfoLivro {
+        height: 250px !important;
+        width: 100px !important;
+        object-fit: contain;
+    }
+} 
 
 #QtPessoasFila{
     text-align: center;
@@ -403,12 +446,6 @@ body {
 .logoLivrotec{
     height: 140px;
     margin-top:-32px;
-}
-
-#areaLogo {
-    position:absolute;
-    left:50%;
-    transform:translate(-50%)
 }
 
 #areaLogin {

@@ -37,7 +37,6 @@ namespace LivrotecTCC
                 dropdown.Visible = true;
                 litInicialEmail.Text = "<p>" + Email.Substring(0, 1).ToUpper() + "</p>";
             }
-
             if (Email == "" || Email == null)
             {
                 CarregarLivros();
@@ -79,7 +78,7 @@ namespace LivrotecTCC
             List<Livro> listaLivros = BD.Livros.ConsultarMeus(Email);
             if (BD.Usuarios.ContarFilaPessoa(Email) >= 1)
             {
-                litTituloFila1.Text = "<h2 style='text-align: center'> Minhas Filas </h2>";
+                litTituloFila1.Text = "<h2 style='max-width: 85%; margin: auto;'> Minhas Filas </h2>";
             };
             foreach (var livro in listaLivros)
             {
@@ -91,7 +90,7 @@ namespace LivrotecTCC
             List<Livro> listaNaoLivros = BD.Livros.ConsultarNaoMeus(Email);
             if (BD.Usuarios.ContarFilaPessoa(Email) >= 1)
             {
-                litTituloFila2.Text = "<h2 style='text-align: center'> Outras Filas </h2>";
+                litTituloFila2.Text = "<h2 style='max-width: 85%; margin: auto;'> Outras Filas </h2>";
             };
             foreach (var livro in listaNaoLivros)
             {
