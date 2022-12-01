@@ -48,6 +48,21 @@ namespace LivrotecTCC
                 if (ISBN.Text != "" && Nome.Text != "" && Sinopse.Text != "" && fileUp.PostedFile != null)
                 {
                     string TipoArq = fileUp.PostedFile.ContentType;
+                    if (ISBN.Text.Length > 10)
+                    {
+                        erro.Text = "ISBN inválido. Máximo 10 caracteres.";
+                        return;
+                    }
+                    if (Nome.Text.Length > 100)
+                    {
+                        erro.Text = "Nome inválido. Máximo 100 caracteres.";
+                        return;
+                    }
+                    if (Sinopse.Text.Length > 2000)
+                    {
+                        erro.Text = "Sinopse inválido. Máximo 2000 caracteres.";
+                        return;
+                    }
                     if (TipoArq != "image/jpeg")
                     {
                         erro.Text = "Arquivo não permitido! Somente Jpeg.";

@@ -102,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin.aspx" />
+    <Content Include="cadastroUsuario.aspx" />
     <Content Include="duvidas.aspx" />
     <Content Include="css\estilo.css" />
     <Content Include="doacao.aspx" />
@@ -144,6 +145,13 @@
     <Compile Include="BancoDeDados\BDLivro.cs" />
     <Compile Include="BancoDeDados\BDUsuario.cs" />
     <Compile Include="BancoDeDados\BDFila.cs" />
+    <Compile Include="cadastroUsuario.aspx.cs">
+      <DependentUpon>cadastroUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cadastroUsuario.aspx.designer.cs">
+      <DependentUpon>cadastroUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="classes\Emprestimo.cs" />
     <Compile Include="classes\Livro.cs" />
     <Compile Include="classes\usuario.cs" />
