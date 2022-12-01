@@ -53,28 +53,25 @@
         </header>
 
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                <asp:UpdatePanel ID="up1" runat="server">
-                    <ContentTemplate>
-
-        <main id="areaLivro">
-
-            <div id="areaFotoLivro">
-                <asp:Literal ID="litImagemLivro" runat="server"></asp:Literal>
-            </div>
-
-            <div id="areaInfoLivro">
-                <asp:Literal ID="litTituloLivro" runat="server"></asp:Literal>
-                <asp:Literal ID="litCategoriasLivro" runat="server"></asp:Literal>
-                <p id="tituloSinopseLivro">Sinopse</p>
-                <asp:Literal ID="litSinopseLivro" runat="server"></asp:Literal>
-                <section id="secQtBtnLivro">
-                    <asp:Button ID="btnInfoLivro" runat="server" Text="Button" OnClick="btnInfoLivro_Click" />
-                    <asp:Literal ID="litQuantidadeFila" runat="server"></asp:Literal>
-                </section>
-            </div>
-        </main>
+            <asp:UpdatePanel ID="up1" runat="server">
+                <ContentTemplate>
+                    <main id="areaLivro">
+                        <div id="areaFotoLivro">
+                            <asp:Literal ID="litImagemLivro" runat="server"></asp:Literal>
+                        </div>
+                        <div id="areaInfoLivro">
+                            <asp:Literal ID="litTituloLivro" runat="server"></asp:Literal>
+                            <asp:Literal ID="litCategoriasLivro" runat="server"></asp:Literal>
+                            <p id="tituloSinopseLivro">Sinopse</p>
+                            <asp:Literal ID="litSinopseLivro" runat="server"></asp:Literal>
+                            <section id="secQtBtnLivro">
+                                <asp:Button ID="btnInfoLivro" runat="server" Text="Button" OnClick="btnInfoLivro_Click" />
+                                <asp:Literal ID="litQuantidadeFila" runat="server"></asp:Literal>
+                            </section>
+                        </div>
+                    </main>
                 </ContentTemplate>
-                </asp:UpdatePanel>
+            </asp:UpdatePanel>
     </form>
 </body>
 </html>

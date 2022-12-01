@@ -28,11 +28,10 @@ Create table usuario
 	nm_usuario varchar(150) not null,
 	nm_telefone_usuario varchar(20) not null,
 	nm_cpf_usuario varchar(20) not null,
-	ic_restristo_emprestimo boolean,
+	ic_restrito_emprestimo boolean,
 	dt_bloqueio_restricao date,
 	qt_atrasos_usuario int not null,
 	qt_roubos_usuario int not null,
-	qt_livros_doados_usuario int,
 	constraint pk_usuario primary key (nm_email_usuario),
 	constraint fk_tipo_usuario_usuario foreign key (cd_tipo_usuario) 
 		references tipo_usuario(cd_tipo_usuario),
@@ -46,6 +45,7 @@ create table lugar_fila
 	nm_email_usuario VARCHAR(200),
 	nm_isbn VARCHAR(10),
 	cd_lugar_fila INT,
+	dt_entrada_fila DATETIME,
 	CONSTRAINT pk_lugar_fila PRIMARY KEY (nm_email_usuario, nm_isbn),
 	CONSTRAINT fk_usuario_lugar_fila FOREIGN KEY (nm_email_usuario) 
 		REFERENCES usuario(nm_email_usuario),
