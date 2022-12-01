@@ -48,11 +48,25 @@
         </header>
 
         <div class="container" id="areaAdmin">
+            <a href='doacao.aspx' class='aAdmin'>
+                <div class='divAdmin'>
+                    <img src='imagens/imgDoacaoLivro.png' alt='Uma mão segurando um livro' class='imgAdmin' style='height: 250px;'>
+                    <p class='prAdmin'>Doações</p>
+                </div>
+            </a>
+            <a href='emprestimos.aspx' class='aAdmin'>
+                <div class='divAdmin'>
+                    <img src='imagens/imgEmprestimoLivro.png' alt='Pilha de livros' class='imgAdmin' style='height: 250px;'>
+                    <p class='prAdmin'>Empréstimos</p>
+                </div>
+            </a>
+            <a href='livrosadmin.aspx' class='aAdmin'>
+                <div class='divAdmin'>
+                    <img src='imagens/imgEmprestimoLivro.png' alt='Pilha de livros' class='imgAdmin' style='height: 250px;'>
+                    <p class='prAdmin'>Livros</p>
+                </div>
+            </a>
 
-            <asp:Literal ID="litDoacao" runat="server"></asp:Literal>
-            <asp:Literal ID="litEmprestimo" runat="server"></asp:Literal>
-            <asp:Literal ID="litLivro" runat="server"></asp:Literal>
-            
         </div>
 
     </form>

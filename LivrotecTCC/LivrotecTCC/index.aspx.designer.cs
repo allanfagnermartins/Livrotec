@@ -24,13 +24,13 @@ namespace LivrotecTCC
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Controle litLogin.
+        /// Controle AreaLogin.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litLogin;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor AreaLogin;
 
         /// <summary>
         /// Controle icone.
@@ -40,15 +40,6 @@ namespace LivrotecTCC
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl icone;
-
-        /// <summary>
-        /// Controle litInicialEmail.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litInicialEmail;
 
         /// <summary>
         /// Controle dropdown.
@@ -69,48 +60,75 @@ namespace LivrotecTCC
         protected global::System.Web.UI.WebControls.LinkButton btnSair;
 
         /// <summary>
-        /// Controle litTituloFila1.
+        /// Controle TituloMinhasFilas.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litTituloFila1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl TituloMinhasFilas;
 
         /// <summary>
-        /// Controle litMinhasFilas.
+        /// Controle MainMeusLivros.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litMinhasFilas;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MainMeusLivros;
 
         /// <summary>
-        /// Controle litTituloFila2.
+        /// Controle MinhasFilasRepeater.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litTituloFila2;
+        protected global::System.Web.UI.WebControls.Repeater MinhasFilasRepeater;
 
         /// <summary>
-        /// Controle litNaoMinhaFilas.
+        /// Controle TituloNaoMinhasFilas.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litNaoMinhaFilas;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl TituloNaoMinhasFilas;
 
         /// <summary>
-        /// Controle litFilas.
+        /// Controle MainOutrasFilas.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litFilas;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MainOutrasFilas;
+
+        /// <summary>
+        /// Controle OutrasFilasRepeater.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater OutrasFilasRepeater;
+
+        /// <summary>
+        /// Controle MainTodasFilas.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MainTodasFilas;
+
+        /// <summary>
+        /// Controle FilasRepeater.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater FilasRepeater;
     }
 }
