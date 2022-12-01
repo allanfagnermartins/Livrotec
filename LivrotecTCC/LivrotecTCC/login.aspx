@@ -44,7 +44,6 @@
                 <section>   
                     <p>Senha</p>
                     <asp:TextBox ID="senha" runat="server" class="form-control filtroLogin" type="password" placeholder="Digite sua senha"></asp:TextBox>
-                    <a href="duvidas.aspx"> <p>Esqueci minha senha</p> </a>
                 </section>
                 <section style="text-align:center;">
                     <asp:Button ID="btnLogin" runat="server" Text="Entrar" OnClick="btnLogin_Click" />

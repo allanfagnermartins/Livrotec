@@ -123,6 +123,7 @@
     <Content Include="imagens\logo.svg" />
     <Content Include="imagens\LogoLivrotec.png" />
     <Content Include="imagens\search.png" />
+    <Content Include="livrosadmin.aspx" />
     <Content Include="index.aspx" />
     <Content Include="js\script.js" />
     <Content Include="livro.aspx" />
@@ -180,6 +181,13 @@
     </Compile>
     <Compile Include="emprestimos.aspx.designer.cs">
       <DependentUpon>emprestimos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="livrosadmin.aspx.cs">
+      <DependentUpon>livrosadmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="livrosadmin.aspx.designer.cs">
+      <DependentUpon>livrosadmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

@@ -24,7 +24,7 @@ namespace LivrotecTCC
 
                 if (BD.Usuarios.VerificarAdmin(cookie["Email"]))
                 {
-                    Response.Redirect("admin.aspx?email=" + cookie["Email"]);
+                    Response.Redirect("admin.aspx");
                     email.Text = "";
                     senha.Text = "";
                 }
@@ -55,13 +55,13 @@ namespace LivrotecTCC
                 erro.Text = "";
                 if (BD.Usuarios.VerificarAdmin(cookie["Email"]))
                 {
-                    Response.Redirect("admin.aspx?email=" + cookie["Email"]);
+                    Response.Redirect("admin.aspx");
                     email.Text = "";
                     senha.Text = "";
                 }
                 else
                 {
-                    Response.Redirect("index.aspx?email=" + cookie["Email"]);
+                    Response.Redirect("index.aspx");
                     email.Text = "";
                     senha.Text = "";
                 }

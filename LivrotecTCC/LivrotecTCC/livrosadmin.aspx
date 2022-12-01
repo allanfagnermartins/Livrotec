@@ -1,4 +1,4 @@
-﻿ <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="LivrotecTCC.index1" %>
+﻿ <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="livrosadmin.aspx.cs" Inherits="LivrotecTCC.livrosadmin" %>
 
 <!DOCTYPE html>
 
@@ -28,13 +28,6 @@
                 </div>
             </a>
 
-            <a href='login.aspx' ID="AreaLogin" runat="server">
-                <div id="areaLogin">
-                    <h2 >
-                        Login
-                    </h2>
-                </div>
-            </a>
 
            <section class="icone" id="icone" runat="server"> <p><%=  this.Email?.Substring(0, 1)?.ToUpper()  %> </p> </section>
             <div class="dropdown" id ="dropdown" runat="server">
@@ -57,30 +50,6 @@
             <input placeholder="Buscar livro" type="text" name="Busca" class="form-control" id="filtroBusca">
             <button id="btnFiltro" onclick="filtroBusca"><i class="fa fa-search"></i> </button>
         </div>
-        
-        <h2 style='max-width: 85%; margin: auto;' id="TituloMinhasFilas" runat="server" visible="false"> Minhas Filas </h2>
-        <main style="margin-top: 16px; margin-bottom: 36px;" class="areaLivros" id="MainMeusLivros" runat="server" visible="false">
-            <asp:Repeater id="MinhasFilasRepeater" runat="server"> 
-                <ItemTemplate>
-                    <a href='livro.aspx?cd=<%# Eval("ISBN") %>&email=<%#this.Email%> }' class = 'cardFila'>
-                        <img src='imagens/<%# Eval("Caminho") %>.jpg'  class='imgLivro' alt='capa do livro '<%# Eval("Nome") %>>
-                        <p id='titulo'><%# Eval("Nome") %></p>
-                    </a> 
-                </ItemTemplate> 
-            </asp:Repeater>
-        </main>
-
-        <h2 style='max-width: 85%; margin: auto;' id="TituloNaoMinhasFilas" runat="server" visible="false"> Outras Filas </h2>
-        <main style="margin-top: 16px; margin-bottom: 36px;" id="MainOutrasFilas" class="areaLivros" runat="server" visible="false">
-            <asp:Repeater id="OutrasFilasRepeater" runat="server"> 
-                <ItemTemplate>
-                    <a href='livro.aspx?cd=<%# Eval("ISBN") %>&email=<%#this.Email%> }' class = 'cardFila'>
-                        <img src='imagens/<%# Eval("Caminho") %>.jpg'  class='imgLivro' alt='capa do livro '<%# Eval("Nome") %>>
-                        <p id='titulo'><%# Eval("Nome") %></p>
-                    </a> 
-                </ItemTemplate> 
-            </asp:Repeater>
-        </main>
 
         <main class="areaLivros" id="MainTodasFilas" runat="server" visible="false">
             <asp:Repeater id="FilasRepeater" runat="server"> 
