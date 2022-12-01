@@ -1,0 +1,526 @@
+﻿@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+@font-face {
+    src: url('HindKochi-Regular.woff2') format('woff2'), url('HindKochi-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background-color: #F8F9FA;
+    padding: 0;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+#headerTelaPrincipal {
+    background-color: #232F3E;
+    height: 80px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+#areaFiltros {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 85%;
+    max-width: 900px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.areaLivros {
+    max-width: 85%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+    margin: auto;
+}
+
+.cardFila {
+    width: 210px;
+    height: 265px;
+    border-radius: 20px;
+    border-color: #232F3E;
+    border-style: solid;
+    border-width: 1.5px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    text-decoration: none;
+    color: black;
+    font-family: 'hind-kochi-medium-3', sans-serif;
+}
+
+#titulo {
+    text-align: center;
+    padding-right: 5px;
+    padding-left: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 90%;
+}
+
+#filtroBusca {
+    width: 100%;
+    height: 35px;
+    border-radius: 20px;
+    border: none;
+    background-color: #bfbfbf;
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
+    #filtroBusca:focus {
+        outline: none;
+    }
+
+#btnFiltro {
+    margin-left: -39px;
+    width: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: #8A6B32;
+    position: relative;
+    right: 0%;
+    cursor: pointer;
+}
+
+.imgLivro {
+    height: 204px;
+    width: 155px;
+}
+
+#areaLivro {
+    width: 90%;
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 50%;
+    top: calc(50% + 40px);
+    transform: translate(-50%, -50%);
+    border: 2px solid #8A6B32;
+    border-radius: 15px;
+    font-family: 'hind-kochi-medium-3', sans-serif;
+    background-color: #232F3E;
+    color: #FFFFFF;
+}
+
+#areaFotoLivro {
+    padding: 2em;
+}
+
+#areaInfoLivro {
+    border-left: 2px solid #232F3E;
+    padding-top: 2%;
+    width:100%;
+}
+
+#QtPessoasFila{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#pTituloLivro {
+    font-size: 30px;
+    font-weight: bold;
+    color: #8A6B32;
+    font-family: 'Raleway', sans-serif;
+}
+
+#pSinopseLivro {
+    font-size: 16px;
+    margin-right: 24px;
+    font-family: 'Raleway', sans-serif;
+}
+
+#tituloSinopseLivro {
+    font-size: 25px;
+    margin-top: 5%;
+    color: #8A6B32;
+}
+
+#btnInfoLivro {
+    width: 250px;
+    height: 35px;
+    background-color: #8A6B32;
+    bottom: 40px;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    font-size: 17px;
+}
+
+#secQtBtnLivro {
+    align-content: center;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 10%;
+}
+
+
+#btnConfirmarEmprestimo {
+    margin-top: 2%;
+    width: 250px;
+    height: 35px;
+    background-color: #8A6B32;
+    bottom: 40px;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    font-size: 17px;
+}
+
+#btnCancelarEmprestimo {
+    margin-top: 2%;
+    width: 250px;
+    height: 35px;
+    background-color: #8A6B32;
+    bottom: 40px;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    font-size: 17px;
+}
+
+#btnConfirmarDevolucao {
+    margin-top: 2%;
+    width: 250px;
+    height: 35px;
+    background-color: #8A6B32;
+    bottom: 40px;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    font-size: 17px;
+} 
+
+#btnEmprestimoRoubado {
+    margin-top: 2%;
+    width: 250px;
+    height: 35px;
+    background-color: #8A6B32;
+    bottom: 40px;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    font-size: 17px;
+}
+
+
+#imgInfoLivro {
+    height: 400px;
+    width: 266.75px;
+}
+
+#areaAdmin {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    left:50%;
+    top:50%;
+    align-content:center;
+    justify-content:center;
+    gap: 100px;
+    transform: translate(-50%, calc(-50% - 0px));
+}
+
+.aAdmin {
+    height: 350px;
+    text-decoration: none;
+}
+
+.divAdmin {
+    border: 2px solid #8A6B32;
+    background-color: #232F3E;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.prAdmin {
+    font-family: 'hind-kochi-medium-3', sans-serif;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+#mainLogin {
+    position: absolute;
+    width: 900px;
+    min-width: 250px;
+    top: calc(50% + 40px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'hind-kochi-medium-3', sans-serif;
+    color: #232F3E;
+    display: flex;
+    gap: 100px;
+}
+
+#mainLogin button {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#mainLogin section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.filtroLogin{
+    width: 95%;
+    height: 35px;
+    border-radius: 20px;
+    border: none;
+    background-color: #bfbfbf;
+    padding-right: 2.5%;
+    padding-left: 2.5%;
+}
+
+#mainLogin p {
+    margin-bottom:2px;
+    margin-left:20px;
+    }
+
+#mainLogin h2 {
+    font-size: 28px;
+    color: #8A6B32;
+    margin-bottom:40px;
+}
+
+#mainLogin a p, #mainLogin a{
+    text-decoration:none;
+    font-size:10px;
+    margin-top:3px;
+}
+
+#btnLogin {
+    width: 120px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    background-color: #8A6B32;
+    color: white;
+    padding-right: 2.5%;
+    padding-left: 2.5%;
+}
+
+.erro {
+    font-size:14px;
+    color:red;
+    text-align:center;
+}
+
+.imgLivroEmprestimo {
+    height: 150px;
+    width: 112px;
+}
+
+.cardEmprestimo {
+    width: 350px;
+    height: 188px;
+    border-radius: 20px;
+    border-color: #232F3E;
+    border-style: solid;
+    border-width: 1.5px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    font-family: 'hind-kochi-medium-3', sans-serif;
+    background-color: #232F3E;
+    color: #FFFFFF;
+    border: 2px solid #8A6B32;
+}
+
+.contEmprestimo {
+    height:30%;
+    margin-bottom:15px;
+    margin-top:15px;
+
+}
+
+.sctContEmprestimo {
+    width: 195px;
+    margin-left:10px;
+    font-size: 13px;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+#pSituacaoEmprestimo{
+    border: thin solid;
+    border-radius: 5px;
+}
+
+#areaInfoEmprestimo {
+    border-left: 2px solid #232F3E;
+    padding: 2%;
+    width: 100%;
+    text-align: center;
+}
+
+#areaInfoEmprestimo p {
+    margin-bottom:50px;
+}
+
+#areaInfoEmprestimo h2 {
+    margin-bottom: 25px;
+}
+
+.invisivel {
+    display:none;
+}
+
+.nada {
+}
+
+.logoLivrotec{
+    height: 140px;
+    margin-top:-32px;
+}
+
+#areaLogo {
+    position:absolute;
+    left:50%;
+    transform:translate(-50%)
+}
+
+#areaLogin {
+    position: absolute;
+    right: 5%;
+    top: 40px;
+    transform: translate(0%,-50%);
+    text-decoration: none;
+    color: #8A6B32;
+    font-size:14px;
+}
+
+.dropdown {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translate(0,-50%);
+    display: inline-block;
+    height: 28px;
+    width: 28px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    margin-top: -4px;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+}
+
+.dropdown-content a {
+    display: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropdown-content a {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.icone {
+    border-radius: 20px;
+    height: 40px;
+    width: 40px;
+    background-color: orange;
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translate(0,-50%);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    font-weight: bolder;
+}
+
+.avisoImportante {
+    text-align:center;
+    color: #FF0000;
+}
+
+.secDuvidas {
+    background-color: #232F3E;
+    border: 3px solid #8A6B32;
+    border-radius: 20px;
+    color: #FFFFFF;
+    margin-top: 100px;
+    padding: 5px;
+    width: 500px;
+}
+
+#mainDuvidas {
+    max-width: 85%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+    margin: auto;
+}
+
+.secDuvidas p{
+    text-align: center;
+}
+
+.secDuvidas h1{
+    color: #8A6B32;
+    margin-left: 10px;
+}
+
+.imgDuvidas {
+    height: 180px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 50%;
+    transform: translate(-50%);
+}
