@@ -30,9 +30,7 @@
 
             <a href='login.aspx' ID="AreaLogin" runat="server">
                 <div id="areaLogin">
-                    <h2 >
-                        Login
-                    </h2>
+                    <h2> Login </h2>
                 </div>
             </a>
 

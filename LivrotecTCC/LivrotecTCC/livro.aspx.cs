@@ -20,7 +20,7 @@ namespace LivrotecTCC
             ISBN = Request["cd"];
             Email = Request["email"];
 
-            litLogin.Text = "Login";
+            AreaLogin.Visible = true;
 
             if (cookie == null)
             {
@@ -30,7 +30,7 @@ namespace LivrotecTCC
 
             if (cookie != null)
             {
-                litLogin.Text = "";
+                AreaLogin.Visible = false;
                 Email = cookie["Email"];
                 icone.Visible = true;
                 dropdown.Visible = true;
@@ -77,56 +77,46 @@ namespace LivrotecTCC
             var posicao = BD.Filas.Posicao(Email, ISBN);
             var quantidade = BD.Filas.Tamanho(ISBN);
 
-            if (Request["email"] != null)
+   
+
+            litImagemLivro.Text = $"<img id='imgInfoLivro' src='imagens/{livro.Caminho}.jpg'></img>";
+            litTituloLivro.Text = $"<p id='pTituloLivro'>{ livro.Nome }</p>";
+            litSinopseLivro.Text = $"<p id='pSinopseLivro'>{ livro.Sinopse }</p>";
+            
+            if (Request["email"] == null)
             {
+                return;
+            }
 
-                litImagemLivro.Text = $"<img id='imgInfoLivro' src='imagens/{livro.Caminho}.jpg'></img>";
-                litTituloLivro.Text = $"<p id='pTituloLivro'>{ livro.Nome }</p>";
-                litSinopseLivro.Text = $"<p id='pSinopseLivro'>{ livro.Sinopse }</p>";
+            if (posicao != null)
+            {
+                litQuantidadeFila.Text = $"<p id='QtPessoasFila'>Sua posição na fila: {posicao}</p>";
+                return;
+            }
 
-                if (posicao == null)
-                {
+            if (!BD.Emprestimos.ChecarEmprestimoLivro(Email, ISBN))
+            {
+                litQuantidadeFila.Text = $"<p id='QtPessoasFila'>{quantidade}</p>";
+                return;
+            }
+            if (!BD.Emprestimos.ChecarEmprestimo(Email))
+            {
+                return;
+            }
+            btnInfoLivro.Visible = false;
 
-                    if (BD.Emprestimos.ChecarEmprestimoLivro(Email, ISBN))
-                    {
-
-                        if(BD.Emprestimos.ChecarEmprestimo(Email))
-                        {
-                            if(BD.Emprestimos.ConsultarRoubos(codigoEmprestimo.ToString()))
-                            {
-                                btnInfoLivro.Visible = false;
-                                litQuantidadeFila.Text = $"<p class='avisoImportante'> Você roubou um livro, verifique como proceder na unidade mais próxima! </p>";
-                            }
-                            else
-                            {
-                                if(BD.Emprestimos.ChecarEmprestimoConfirmado(codigoEmprestimo.ToString()))
-                                {
-                                    var dias = BD.Emprestimos.DiasRestantes(codigoEmprestimo.ToString());
-                                    btnInfoLivro.Visible = false;
-                                    litQuantidadeFila.Text = $"<p class='avisoImportante'> Você tem {dias} dias restantes em seu empréstimo</p>";
-                                }
-
-                                else
-                                {
-                                    btnInfoLivro.Visible = false;
-                                    litQuantidadeFila.Text = $"<p class='avisoImportante'> Venha buscar seu livro na unidade escolar!</p>";
-                                }
-                                
-                            }
-                        }
-                        
-                    }
-                    else
-                    {
-                        litQuantidadeFila.Text = $"<p id='QtPessoasFila'>{quantidade}</p>";
-                    }
-
-                }
-                else
-                {
-                    litQuantidadeFila.Text = $"<p id='QtPessoasFila'>Sua posição na fila: {posicao}</p>";
-                }
-
+            if (BD.Emprestimos.ConsultarRoubos(codigoEmprestimo.ToString()))
+            {
+                litQuantidadeFila.Text = $"<p class='avisoImportante'> Você roubou um livro, verifique como proceder na unidade mais próxima! </p>";
+            }
+            else if (BD.Emprestimos.ChecarEmprestimoConfirmado(codigoEmprestimo.ToString()))
+            {
+                var dias = BD.Emprestimos.DiasRestantes(codigoEmprestimo.ToString());
+                litQuantidadeFila.Text = $"<p class='avisoImportante'> Você tem {dias} dias restantes em seu empréstimo</p>";
+            }
+            else
+            {
+                litQuantidadeFila.Text = $"<p class='avisoImportante'> Venha buscar seu livro na unidade escolar!</p>";
             }
 
         }

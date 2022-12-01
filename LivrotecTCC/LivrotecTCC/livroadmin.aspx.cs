@@ -22,10 +22,7 @@ namespace LivrotecTCC
             litLogin.Text = "Login";
 
             if (cookie == null)
-            {
-                icone.Visible = false;
-                dropdown.Visible = false;
-            }
+                Response.Redirect("login.aspx");
 
             if (cookie != null)
             {
@@ -38,20 +35,10 @@ namespace LivrotecTCC
                 if (Email == "" || Email == null)
                 {
                     Response.Redirect("index.aspx");
-                }
-                else
-                {
-                    CarregarLivrosAdmin();
-                }
-
+                } 
             }
 
-        }
-
-        void CarregarLivrosAdmin()
-        {
-            litLivros.Text = "Logado";
-        }
+        } 
 
         protected void btnSair_Click(object sender, EventArgs e)
         {

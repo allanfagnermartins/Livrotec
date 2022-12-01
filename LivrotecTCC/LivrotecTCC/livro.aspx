@@ -30,11 +30,9 @@
                 </div>
             </a>
 
-            <a href='login.aspx'>
+            <a href='login.aspx' ID="AreaLogin" runat="server">
                 <div id="areaLogin">
-                    <h2>
-                    <asp:Literal ID="litLogin" runat="server"></asp:Literal>
-                    </h2>
+                    <h2> Login </h2>
                 </div>
             </a>
 
