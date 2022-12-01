@@ -37,6 +37,7 @@ namespace LivrotecTCC
                 dropdown.Visible = true;
                 litInicialEmail.Text = "<p>" + Email.Substring(0, 1).ToUpper() + "</p>";
             }
+
             if (Email == "" || Email == null)
             {
                 CarregarLivros();

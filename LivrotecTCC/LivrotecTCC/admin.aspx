@@ -37,7 +37,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                 </svg>
                 <div class="dropdown-content">
-                      <asp:LinkButton ID="btnSair" runat="server" OnClick="btnSair_Click" >Sair</asp:LinkButton>  
+                      <asp:LinkButton ID="btnSair" runat="server" OnClick="btnSair_Click">Sair</asp:LinkButton>  
                 </div>
             </div>
 
