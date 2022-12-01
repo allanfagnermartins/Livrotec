@@ -156,6 +156,22 @@ body {
     color: #FFFFFF;
 }
 
+@media (max-width: 768px) {
+    #areaLivro {
+        flex-direction: column;
+        padding-inline: 16px;
+        text-align: center;
+        top: calc(50% + 100px);
+        height: calc(100% - 80px);
+    }
+
+    #imgInfoLivro {
+        height: 200px;
+        width: 100% !important;
+        object-fit: contain;
+    }
+}
+
 #areaFotoLivro {
     padding: 2em;
 }
@@ -165,14 +181,6 @@ body {
     padding-top: 2%;
     width:100%;
 }
-
-@media (max-width: 1024px) {
-    #imgInfoLivro {
-        height: 250px !important;
-        width: 100px !important;
-        object-fit: contain;
-    }
-} 
 
 #QtPessoasFila{
     text-align: center;
@@ -218,6 +226,7 @@ body {
     justify-content: center;
     gap: 100px;
     margin-top: 10%;
+    margin-bottom: 64px;
 }
 
 
@@ -296,16 +305,19 @@ body {
 }
 
 .divAdmin {
-    border: 2px solid #8A6B32;
-    background-color: #232F3E;
+    border: 1.5px solid #232F3E;
     border-radius: 20px;
     padding: 20px;
     text-align: center;
 }
 
+.divAdmin:hover {
+    background-color: #e9ecef;
+}
+
 .prAdmin {
     font-family: 'hind-kochi-medium-3', sans-serif;
-    color: #FFFFFF;
+    color: black;
     font-weight: bold;
     margin-top: 5%;
 }
@@ -369,6 +381,7 @@ body {
     color: white;
     padding-right: 2.5%;
     padding-left: 2.5%;
+    margin-block: 16px;
 }
 
 .erro {
@@ -383,21 +396,24 @@ body {
 }
 
 .cardEmprestimo {
-    width: 350px;
-    height: 188px;
+    height: 265px;
     border-radius: 20px;
     border-color: #232F3E;
     border-style: solid;
     border-width: 1.5px;
-    padding-left: 10px;
+    margin-bottom: 15px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
+    padding-top: 20px;
     text-decoration: none;
+    color: black;
     font-family: 'hind-kochi-medium-3', sans-serif;
-    background-color: #232F3E;
-    color: #FFFFFF;
-    border: 2px solid #8A6B32;
+}
+
+.cardEmprestimo:hover {
+    color: black;
+    background-color: #e9ecef;
 }
 
 .contEmprestimo {
@@ -409,11 +425,9 @@ body {
 
 .sctContEmprestimo {
     width: 195px;
-    margin-left:10px;
     font-size: 13px;
-    display: flex;
-    flex-direction:column;
-    align-items:center;
+    display: block;
+    text-align: center;
 }
 
 #pSituacaoEmprestimo{
@@ -560,4 +574,16 @@ body {
     margin-bottom: 20px;
     margin-left: 50%;
     transform: translate(-50%);
+}
+
+#doacao {
+    position: absolute;
+    top: calc(50% + 40px);
+    max-width: 900px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'hind-kochi-medium-3', sans-serif;
+    color: #232F3E;
+    display: flex;
+    gap: 100px;
 }
