@@ -85,12 +85,12 @@ create table doacao
 insert into tipo_usuario values (1,'Administrador');
 insert into tipo_usuario values (2, 'Usuário Comum');
 
-insert into usuario values('allanfagnermartins@gmail.com', 2, 'senha', 'Allan Fagner', '13988015435', '18928493716', false, null, 0, 0, 0);
-insert into usuario values('drianoreoul@gmail.com', 2, 'senha', 'Adriano Fraga', '13917189374', '1892568493716', false, null, 0, 0, 1);
-insert into usuario values('claradasilvabarriento@gmail.com', 2, 'senha', 'Clara Barriento', '13991325727','39675649836' , false, null, 1, 1, 0);
-insert into usuario values('evelyndasilva@gmail.com', 2, 'senha', 'Evelyn da Silva', '13973816251', '6791236451', false, null, 0, 0, 1);
-insert into usuario values('camilasantana@gmail.com', 2, 'senha', 'Camila Santana', '139917453', '27192172182', false, null, 85, 1, 1);
-insert into usuario values('sofiabretas@gmail.com', 1, 'senha', 'Sofia Bretas', '13985125135', '35141251200', false, null, 0, 0, 0);
+insert into usuario values('allanfagnermartins@gmail.com', 2, 'senha', 'Allan Fagner', '13988015435', '18928493716', false, null, 0, 0);
+insert into usuario values('drianoreoul@gmail.com', 2, 'senha', 'Adriano Fraga', '13917189374', '1892568493716', false, null, 0, 0);
+insert into usuario values('claradasilvabarriento@gmail.com', 2, 'senha', 'Clara Barriento', '13991325727','39675649836' , false, null, 0, 0);
+insert into usuario values('evelyndasilva@gmail.com', 2, 'senha', 'Evelyn da Silva', '13973816251', '6791236451', false, null, 0, 0);
+insert into usuario values('camilasantana@gmail.com', 2, 'senha', 'Camila Santana', '139917453', '27192172182', false, null, 0, 0);
+insert into usuario values('sofiabretas@gmail.com', 1, 'senha', 'Sofia Bretas', '13985125135', '35141251200', false, null, 0, 0);
 
 insert into livro values('8576862549','Os Garotos Corvos', 'Todo ano, na véspera do Dia de São Marcos, Blue Sargent vai com sua mãe clarividente até uma igreja abandonada para ver os espíritos daqueles que vão morrer em breve. Blue nunca consegue vê-los - até este ano, quando um garoto emerge da escuridão e fala diretamente com ela. Seu nome é Gansey, e ela logo descobre que ele é um estudante rico da Academia Aglionby, a escola particular da cidade.',
 1, 'capaTeste');

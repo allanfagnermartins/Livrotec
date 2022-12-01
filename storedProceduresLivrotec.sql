@@ -17,7 +17,7 @@ end$$
 Drop Procedure if Exists listarLivrosPessoa$$
 Create Procedure listarLivrosPessoa(vEmail varchar(200))
 begin
-	select * from livro l left join lugar_fila lf on (l.nm_isbn = lf.nm_isbn) where nm_email_usuario = vEmail or l.nm_isbn in (select nm_isbn from emprestimo where nm_email_usuario = vEmail and dt_devolucao_efetiva_emprestimo is null);
+	select * from livro l left join lugar_fila lf on (l.nm_isbn = lf.nm_isbn) where nm_email_usuario = vEmail or l.nm_isbn in (select nm_isbn from emprestimo where nm_email_usuario = vEmail and dt_devolucao_efetiva_emprestimo is null and ic_roubado = false);
 end$$
 
 Drop Procedure if Exists listarLivrosNaoPessoa$$
