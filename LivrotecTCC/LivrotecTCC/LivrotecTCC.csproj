@@ -177,6 +177,12 @@
     <Compile Include="doacoes.aspx.designer.cs">
       <DependentUpon>doacoes.aspx</DependentUpon>
     </Compile>
+    <Compile Include="editarlivro.aspx.cs">
+      <DependentUpon>editarlivro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editarlivro.aspx.designer.cs">
+      <DependentUpon>editarlivro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="emprestimo.aspx.cs">
       <DependentUpon>emprestimo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

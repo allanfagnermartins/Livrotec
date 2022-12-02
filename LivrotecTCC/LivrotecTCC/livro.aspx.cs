@@ -76,6 +76,12 @@ namespace LivrotecTCC
             var codigoEmprestimo = BD.Emprestimos.CodigoEmprestimo(Email, ISBN);
             var posicao = BD.Filas.Posicao(Email, ISBN);
             var quantidade = BD.Filas.Tamanho(ISBN);
+
+
+            litImagemLivro.Text = $"<img id='imgInfoLivro' src='imagens/{livro.Caminho}.jpg'></img>";
+            litTituloLivro.Text = $"<p id='pTituloLivro'>{ livro.Nome }</p>";
+            litSinopseLivro.Text = $"<p id='pSinopseLivro'>{ livro.Sinopse }</p>";
+
             if (posicao == null)
             {
 
