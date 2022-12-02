@@ -44,12 +44,14 @@ namespace LivrotecTCC
                 erro.Text = "Senha inválida. Máximo 64 caracteres.";
                 return;
             }
+            if (Email.Text != "" && Nome.Text != "" && Telefone.Text != "" && CPF.Text !="")
+            {
             BD.Usuarios.CriarUsuario(Email.Text, Senha.Text, Nome.Text, Telefone.Text, CPF.Text);
             Email.Text = "";
             Nome.Text = "";
             Telefone.Text = "";
             CPF.Text = "";
-
+            }
         }
     }
 }
