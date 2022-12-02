@@ -57,8 +57,9 @@
                     Perdeu o livro?
                 </h1>
                 <p>
-                    Contate 
+                    Contate a instituição sobre o ocorrido e as devidas providências sejam tomadas.
                 </p>
+                <img src="imagens/livroPerdido.png" class="imgDuvidas"/>
             </section>
 
 

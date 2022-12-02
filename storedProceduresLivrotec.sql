@@ -374,3 +374,17 @@ begin
 end$$
 
 delimiter ;
+
+insert into emprestimo values (1, '8582350791', 'camilasantana@gmail.com', '2019-03-04', '2019-04-04', '2019-03-06', false);
+insert into emprestimo values (2, '6586490294', 'claradasilvabarriento@gmail.com', '2019-03-04', '2019-04-04', '2019-03-06', false);
+insert into emprestimo values (3, '858105045X', 'drianoreoul@gmail.com', '2019-03-04', '2019-04-04', '2019-03-06', false);
+insert into emprestimo values (4, '8501112429', 'evelyndasilva@gmail.com', '2019-03-04', '2019-04-04', '2019-03-06', false);
+insert into emprestimo values (5, '8576862549', 'allanfagnermartins@gmail.com', '2019-03-04', '2019-04-04', '2019-03-06', false);
+
+insert into emprestimo values (6, '8582350791', 'claradasilvabarriento@gmail.com', '2019-04-05', '2019-05-05', '2019-04-06', false);
+insert into emprestimo values (7, '6586490294', 'evelyndasilva@gmail.com', '2019-04-05', '2019-05-05', '2019-04-06', false);
+insert into emprestimo values (8, '858105045X', 'allanfagnermartins@gmail.com', '2019-04-05', '2019-05-05', '2019-04-06', false);
+insert into emprestimo values (9, '8501112429', 'camilasantana@gmail.com', '2019-04-05', '2019-05-05', '2019-04-06', false);
+insert into emprestimo values (10, '8576862549', 'drianoreoul@gmail.com', '2019-04-05', '2019-05-05', '2019-04-06', false);
+
+insert into emprestimo values (11, '6586490294', 'camilasantana@gmail.com', '2019-05-06', '2019-06-06', null, true);

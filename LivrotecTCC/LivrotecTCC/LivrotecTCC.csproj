@@ -122,6 +122,7 @@
     <Content Include="imagens\imgDoacaoLivro.png" />
     <Content Include="imagens\imgEmprestimoLivro.png" />
     <Content Include="imagens\journal-minus.svg" />
+    <Content Include="imagens\livroPerdido.png" />
     <Content Include="imagens\logo.svg" />
     <Content Include="imagens\LogoLivrotec.png" />
     <Content Include="imagens\search.png" />
