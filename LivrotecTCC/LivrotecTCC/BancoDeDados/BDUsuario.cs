@@ -45,6 +45,11 @@ namespace LivrotecTCC
 			return Fila;
 		}
 
+		public void CriarUsuario(string email, string senha, string nome, string telefone, string cpf)
+		{
+			ExecutarProc("criarUsuario", ("vEmail", email), ("vSenha", senha), ("vNome", nome), ("vTelefone", telefone), ("vCPF", cpf));
+		}
+
 	}
 }
 

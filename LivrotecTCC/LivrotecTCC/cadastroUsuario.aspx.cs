@@ -4,14 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace LivrotecTCC
 {
     public partial class cadastroUsuario : System.Web.UI.Page
     {
+        BancoDeDados BD = new BancoDeDados();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -36,6 +38,7 @@ namespace LivrotecTCC
                 erro.Text = "Senha inválida. Máximo 64 caracteres.";
                 return;
             }
+            BD.Usuarios.CriarUsuario(Email.Text, Senha.Text, Nome.Text, Telefone.Text, CPF.Text);
 
         }
     }
