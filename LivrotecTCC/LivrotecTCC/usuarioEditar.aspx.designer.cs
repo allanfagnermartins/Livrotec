@@ -78,15 +78,6 @@ namespace LivrotecTCC
         protected global::System.Web.UI.WebControls.Button btnSelecionarUsuario;
 
         /// <summary>
-        /// Controle txtEmailAlterar.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmailAlterar;
-
-        /// <summary>
         /// Controle litNome.
         /// </summary>
         /// <remarks>

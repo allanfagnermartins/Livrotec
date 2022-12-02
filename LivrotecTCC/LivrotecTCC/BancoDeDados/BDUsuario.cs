@@ -56,6 +56,11 @@ namespace LivrotecTCC
 			return usuario == 1;
 		}
 
+		public void EditarUsuario(string email, string senha, string nome, string telefone, string cpf)
+        {
+			ExecutarProc("editarUsuario", ("vEmail", email), ("vNovaSenha", senha), ("vNovoNome", nome), ("vNovoTelefone", telefone), ("vNovoCPF", cpf));
+        }
+
 	}
 }
 

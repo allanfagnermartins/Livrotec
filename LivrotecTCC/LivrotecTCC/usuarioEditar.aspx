@@ -54,17 +54,13 @@
                 </section>
 
                 <section>
-                    <asp:TextBox ID="txtEmailAlterar" runat="server" class="form-contrl filtroLogin" placeholder="Digite o novo email"></asp:TextBox>
-                </section>
-
-                <section>
                     <p><asp:Literal ID="litNome" runat="server"></asp:Literal></p>
-                    <asp:TextBox ID="txtNome" runat="server" class="form-contrl filtroLogin" placeholder="Digite o nome"></asp:TextBox>
+                    <asp:TextBox ID="txtNome" runat="server" class="form-contrl filtroLogin" placeholder="Digite o novo nome"></asp:TextBox>
                 </section>
 
                 <section>
                     <p><asp:Literal ID="litSenha" runat="server"></asp:Literal></p>
-                    <asp:TextBox ID="txtSenha" runat="server" class="form-contrl filtroLogin" placeholder="Digite a nova senha"></asp:TextBox>
+                    <asp:TextBox ID="txtSenha" runat="server" class="form-contrl filtroLogin" placeholder="Digite a nova senha" type="password"></asp:TextBox>
                 </section>
 
                 <section>
