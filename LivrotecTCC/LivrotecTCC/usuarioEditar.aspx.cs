@@ -8,13 +8,12 @@ using System.IO;
 
 namespace LivrotecTCC
 {
-	
-	public partial class editarUsuario : System.Web.UI.Page
-	{
+    public partial class usuarioEditar : System.Web.UI.Page
+    {
         public string Email;
         BancoDeDados BD = new BancoDeDados();
         protected void Page_Load(object sender, EventArgs e)
-		{
+        {
             HttpCookie cookie = Request.Cookies["loginUsuario"];
 
             if (cookie == null)
@@ -27,11 +26,26 @@ namespace LivrotecTCC
 
             Email = cookie["Email"];
             dropdown.Visible = true;
-
-
             cookie.HttpOnly = true;
-        }
 
+            litEmail.Visible = true;
+            litEmail.Text = "Email";
+            btnEditarUsuario.Visible = false;
+            txtEmailAlterar.Visible = false;
+            litNome.Visible = false;
+            litNome.Text = "Novo Nome";
+            txtNome.Visible = false;
+            litCPF.Visible = false;
+            litCPF.Text = "Novo CPF";
+            txtCPF.Visible = false;
+            litTelefone.Visible = false;
+            litTelefone.Text = "Novo Telefone";
+            txtTelefone.Visible = false;
+            litSenha.Visible = false;
+            litSenha.Text = "Nova Senha";
+            txtSenha.Visible = false;
+
+        }
         protected void btnSair_Click(object sender, EventArgs e)
         {
             if (Request.Cookies["loginUsuario"] != null)
@@ -47,7 +61,9 @@ namespace LivrotecTCC
             {
                 if (BD.Usuarios.VerificarUsuario(txtEmail.Text))
                 {
+                    string emailUsuario = txtEmail.Text;
                     EditarUsuario();
+                    erro.Text = "";
                 }
                 else
                 {
@@ -64,14 +80,28 @@ namespace LivrotecTCC
             }
         }
 
-        void EditarUsuario ()
-        {
-           
-        }
-
         protected void btnEditar_Click(object sender, EventArgs e)
         {
 
         }
+
+        void EditarUsuario()
+        {
+            btnSelecionarUsuario.Visible = false;
+            litEmail.Text = "Novo Email";
+            txtEmailAlterar.Visible = true;
+            txtEmail.Visible = false;
+            btnEditarUsuario.Visible = true;
+            litEmail.Visible = true;
+            litNome.Visible = true;
+            txtNome.Visible = true;
+            litCPF.Visible = true;
+            txtCPF.Visible = true;
+            litTelefone.Visible = true;
+            txtTelefone.Visible = true;
+            litSenha.Visible = true;
+            txtSenha.Visible = true;
+        }
+
     }
 }

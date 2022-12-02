@@ -49,7 +49,7 @@
                 </div>
             </a>
 
-            <a href='editarUsuario.aspx' class='aAdmin'>
+            <a href='usuarioEditar.aspx' class='aAdmin'>
                 <div class='divAdmin'>
                     <span class="iconify" data-icon="fa-solid:user-edit" style="color: #8a6b32;" data-width="250" data-height="250"></span>            
                     <p class='prAdmin'>Editar Usuário</p>

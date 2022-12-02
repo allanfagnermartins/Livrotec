@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="editarUsuario.aspx.cs" Inherits="LivrotecTCC.editarUsuario" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="usuarioEditar.aspx.cs" Inherits="LivrotecTCC.usuarioEditar" %>
 
 <!DOCTYPE html>
 
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link href="https://blogfonts.com/css/aWQ9NTYyNDgmc3ViPTI0OCZjPWgmdHRmPUhpbmRLb2NoaS1NZWRpdW0udHRmJm49aGluZC1rb2NoaS1tZWRpdW0tMw/Hind Kochi Medium.ttf" rel="stylesheet" type="text/css"/>
 </head>
+
 <body>
     <form id="form1" runat="server">
         <header id="headerTelaPrincipal">
@@ -42,8 +43,9 @@
                 <section style="text-align:center;">
                     <h2>Editar Usuário</h2>
                 </section>
+
                 <section>
-                    <p>Email</p>
+                    <asp:Literal ID="litEmail" runat="server"></asp:Literal>
                     <asp:TextBox ID="txtEmail" runat="server" class="form-contrl filtroLogin" placeholder="Digite o e-mail do usuário"></asp:TextBox>
                 </section>
 
@@ -52,27 +54,31 @@
                 </section>
 
                 <section>
+                    <asp:TextBox ID="txtEmailAlterar" runat="server" class="form-contrl filtroLogin" placeholder="Digite o novo email"></asp:TextBox>
+                </section>
+
+                <section>
                     <p><asp:Literal ID="litNome" runat="server"></asp:Literal></p>
-                    <asp:TextBox ID="txtNome" runat="server" class="form-contrl filtroLogin invisivel" placeholder="Digite o"></asp:TextBox>
+                    <asp:TextBox ID="txtNome" runat="server" class="form-contrl filtroLogin" placeholder="Digite o nome"></asp:TextBox>
                 </section>
 
                 <section>
                     <p><asp:Literal ID="litSenha" runat="server"></asp:Literal></p>
-                    <asp:TextBox ID="txtSenha" runat="server" class="form-contrl filtroLogin invisivel" placeholder="Digite a nova senha"></asp:TextBox>
+                    <asp:TextBox ID="txtSenha" runat="server" class="form-contrl filtroLogin" placeholder="Digite a nova senha"></asp:TextBox>
                 </section>
 
                 <section>
                     <p><asp:Literal ID="litTelefone" runat="server"></asp:Literal></p>
-                    <asp:TextBox ID="txtTelefone" runat="server" class="form-contrl filtroLogin invisivel" placeholder="Digite o novo telefone"></asp:TextBox>
+                    <asp:TextBox ID="txtTelefone" runat="server" class="form-contrl filtroLogin" placeholder="Digite o novo telefone"></asp:TextBox>
                 </section>
 
                 <section>
                     <p><asp:Literal ID="litCPF" runat="server"></asp:Literal></p>
-                    <asp:TextBox ID="txtCPF" runat="server" class="form-contrl filtroLogin invisivel" placeholder="Digite o novo CPF"></asp:TextBox>
+                    <asp:TextBox ID="txtCPF" runat="server" class="form-contrl filtroLogin" placeholder="Digite o novo CPF"></asp:TextBox>
                 </section>
 
                 <section style="text-align:center;">
-                    <asp:Button ID="btnEditar" runat="server" Text="Editar Usuário" OnClick="btnEditar_Click"/>
+                    <asp:Button ID="btnEditarUsuario" runat="server" Text="Editar Usuário" OnClick="btnEditar_Click"/>
                 </section>
                 
                 <section class="erro" >
@@ -81,7 +87,6 @@
 
             </div>
         </main>
-
     </form>
 </body>
 </html>
