@@ -579,7 +579,19 @@ body {
     transform: translate(-50%);
 }
 
-#doacao {
+#mainDoacao {
+    position: absolute;
+    top: calc(50% + 40px);
+    max-width: 900px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'hind-kochi-medium-3', sans-serif;
+    color: #232F3E;
+    display: flex;
+    gap: 100px;
+}
+
+#areaEditarUsuario {
     position: absolute;
     top: calc(50% + 40px);
     max-width: 900px;

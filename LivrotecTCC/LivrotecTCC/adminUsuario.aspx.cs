@@ -12,7 +12,6 @@ namespace LivrotecTCC
         public string Email;
         protected void Page_Load(object sender, EventArgs e)
         {
-
             HttpCookie cookie = Request.Cookies["loginUsuario"];
 
             if (cookie == null)
@@ -25,8 +24,6 @@ namespace LivrotecTCC
 
             Email = cookie["Email"];
             dropdown.Visible = true;
-
-
             cookie.HttpOnly = true;
 
         }

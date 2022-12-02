@@ -353,3 +353,8 @@ begin
 	end if;
 end$$
 
+Drop Procedure if Exists consultarEmail$$
+Create Procedure consultarEmail(vEmail varchar(200))
+begin
+	select count(*) from usuario where nm_email_usuario = vEmail;
+end$$
