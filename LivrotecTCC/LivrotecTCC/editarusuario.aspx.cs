@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace LivrotecTCC
 {
-    public partial class editarusuario : System.Web.UI.Page
-    {
-        protected void Page_Load(object sender, EventArgs e)
-        {
+	public partial class editarUsuario : System.Web.UI.Page
+	{
+		protected void Page_Load(object sender, EventArgs e)
+		{
 
-        }
-    }
+		}
+	}
 }

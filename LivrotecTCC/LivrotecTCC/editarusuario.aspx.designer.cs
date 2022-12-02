@@ -11,7 +11,7 @@ namespace LivrotecTCC
 {
 
 
-    public partial class editarusuario
+    public partial class editarUsuario
     {
 
         /// <summary>

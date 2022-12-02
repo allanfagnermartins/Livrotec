@@ -352,3 +352,4 @@ begin
 		update usuario set ic_restrito_emprestimo = true;
 	end if;
 end$$
+
