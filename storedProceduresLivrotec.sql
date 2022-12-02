@@ -352,3 +352,25 @@ begin
 		update usuario set ic_restrito_emprestimo = true;
 	end if;
 end$$
+
+Drop Procedure if Exists automatizarEmprestimo$$
+Create Procedure automatizarEmprestimo(vEmail varchar(200))
+begin
+	declare codigo text;
+	select nm_isbn into codigo from lugar_fila where nm_email_usuario = vEmail order by dt_entrada_fila asc limit 1;
+	call CriarEmprestimo(vEmail, codigo);
+end$$
+
+Drop Procedure if Exists criarUsuario$$
+Create Procedure criarUsuario(vEmail varchar(200), vSenha varchar(150), vNome varchar(150), vTelefone varchar(20), vCPF varchar(20))
+begin
+	insert into usuario values(vEmail, 2, vSenha, vNome, vTelefone, vCPF, false, null, 0, 0);
+end$$
+
+Drop Procedure if Exists validarEmail$$
+Create Procedure validarEmail(vEmail varchar(200))
+begin
+	select count(*) from usuario where nm_email_usuario = vEmail;
+end$$
+
+delimiter ;

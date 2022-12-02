@@ -50,6 +50,12 @@ namespace LivrotecTCC
 			ExecutarProc("criarUsuario", ("vEmail", email), ("vSenha", senha), ("vNome", nome), ("vTelefone", telefone), ("vCPF", cpf));
 		}
 
+		public long validarEmail(string Email)
+		{
+			long email = (long)LerProcValorUnico("validarEmail", ("vEmail", Email));
+			return email;
+		}
+
 	}
 }
 

@@ -179,6 +179,7 @@
     </Compile>
     <Compile Include="editarlivro.aspx.cs">
       <DependentUpon>editarlivro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="editarlivro.aspx.designer.cs">
       <DependentUpon>editarlivro.aspx</DependentUpon>
