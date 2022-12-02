@@ -15,6 +15,8 @@ namespace LivrotecTCC
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Cache.SetMaxAge(TimeSpan.Zero);
             Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches);
