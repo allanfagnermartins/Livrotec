@@ -12,8 +12,12 @@ namespace LivrotecTCC
     {
         BancoDeDados BD = new BancoDeDados();
 
+        Identificador Identificador;
         protected void Page_Load(object sender, EventArgs e)
         {
+            Identificador = new Identificador(BD, this);
+            if (!Identificador.EhAdministrador())
+                Response.Redirect("login.aspx");
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)

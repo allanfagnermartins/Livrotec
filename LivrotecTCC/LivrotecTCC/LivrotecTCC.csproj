@@ -106,7 +106,6 @@
     <Content Include="duvidas.aspx" />
     <Content Include="css\estilo.css" />
     <Content Include="doacao.aspx" />
-    <Content Include="doacoes.aspx" />
     <Content Include="editarlivro.aspx" />
     <Content Include="emprestimo.aspx" />
     <Content Include="emprestimos.aspx" />
@@ -170,13 +169,6 @@
     <Compile Include="doacao.aspx.designer.cs">
       <DependentUpon>doacao.aspx</DependentUpon>
     </Compile>
-    <Compile Include="doacoes.aspx.cs">
-      <DependentUpon>doacoes.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="doacoes.aspx.designer.cs">
-      <DependentUpon>doacoes.aspx</DependentUpon>
-    </Compile>
     <Compile Include="editarlivro.aspx.cs">
       <DependentUpon>editarlivro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -198,6 +190,7 @@
     <Compile Include="emprestimos.aspx.designer.cs">
       <DependentUpon>emprestimos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Identificador.cs" />
     <Compile Include="livrosadmin.aspx.cs">
       <DependentUpon>livrosadmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

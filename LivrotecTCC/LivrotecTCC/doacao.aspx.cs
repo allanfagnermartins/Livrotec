@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
+using System.Globalization;
 
 namespace LivrotecTCC
 {
@@ -12,8 +13,12 @@ namespace LivrotecTCC
     {
         BancoDeDados BD = new BancoDeDados();
         Livro livro;
+        Identificador Identificador;
         protected void Page_Load(object sender, EventArgs e)
         {
+            Identificador = new Identificador(BD, this);
+            if (!Identificador.EhAdministrador())
+                Response.Redirect("login.aspx");
             secNome.Visible = false;
             secImagem.Visible = false;
             secCapa.Visible = false;
@@ -27,11 +32,11 @@ namespace LivrotecTCC
         {
             if (livro.ISBN == "" || livro.Nome == "" || livro.Sinopse == "" || fileUp.PostedFile == null)
                 return "Preencha todos os campos!";    
-            if (ISBN.Text.Length > 10)
+            if (livro.ISBN.Length > 10)
                 return "ISBN inválido. Máximo 10 caracteres.";
-            if (Nome.Text.Length > 100)
+            if (livro.Nome.Length > 100)
                 return "Nome inválido. Máximo 100 caracteres.";
-            if (Sinopse.Text.Length > 2000)
+            if (livro.Sinopse.Length > 2000)
                 return "Sinopse inválido. Máximo 2000 caracteres.";
             string TipoArq = fileUp.PostedFile.ContentType;
             if (TipoArq != "image/jpeg")
@@ -41,21 +46,18 @@ namespace LivrotecTCC
         }
         void Salvar()
         {
-            livro = new Livro();
-             
-            if (BD.Livros.consultarISBNDoacao(livro.ISBN) != null)
-            {
-                BD.Livros.ConfirmarDoacaoLivroExistente(livro.ISBN);
+            livro = new Livro(TxtISBN.Text, TxtNome.Text, 0,TxtISBN.Text, TxtSinopse.Text ) ;
+            
+            var JaTemLivro = BD.Livros.consultarISBNDoacao(livro.ISBN) != null;
 
-                secNome.Visible = false;
-                secImagem.Visible = false;
-                secCapa.Visible = false;
-            }
+            secNome.Visible = !JaTemLivro;
+            secImagem.Visible = !JaTemLivro;
+            secCapa.Visible = !JaTemLivro;
+
+            if (JaTemLivro)
+                BD.Livros.ConfirmarDoacaoLivroExistente(livro.ISBN);
             else
-            {
-                secNome.Visible = true;
-                secImagem.Visible = true;
-                secCapa.Visible = true;
+            { 
                 var erro = ValidarCampos(livro);
                 if (erro != null)
                 {

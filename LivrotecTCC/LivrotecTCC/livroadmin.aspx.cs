@@ -9,29 +9,19 @@ namespace LivrotecTCC
 {
     public partial class livroAdmin : System.Web.UI.Page
     {
-
-        public string Email;
+        public string Email => Identificador.Email;
         string ISBN;
+        Identificador Identificador;
         BancoDeDados BD = new BancoDeDados();
         protected void Page_Load(object sender, EventArgs e)
         {
-            HttpCookie cookie = Request.Cookies["loginUsuario"];
+            Identificador = new Identificador(BD, this);
             ISBN = Request["cd"];
-            Email = Request["email"];
 
 
-            if (cookie == null)
+            if (!Identificador.EhAdministrador())
                 Response.Redirect("login.aspx");
 
-            if (cookie != null)
-            {
-                Email = cookie["Email"];
-                icone.Visible = true;
-                dropdown.Visible = true;
-            }
-
-            if (ISBN == null || Email == null)
-                Response.Redirect("login.aspx");
             
             CarregarInfosLivro();
 
@@ -62,11 +52,7 @@ namespace LivrotecTCC
 
         protected void btnSair_Click(object sender, EventArgs e)
         {
-            if (Request.Cookies["loginUsuario"] != null)
-            {
-                Response.Cookies["loginUsuario"].Expires = DateTime.Now.AddDays(-1);
-            }
-            Response.Redirect("index.aspx");
+            Identificador.Logout();
         }
 
     }

@@ -10,32 +10,19 @@ namespace LivrotecTCC
     public partial class editarlivro : System.Web.UI.Page
     {
         public string Email;
+        Identificador Identificador;
+        BancoDeDados BD = new BancoDeDados();
         protected void Page_Load(object sender, EventArgs e)
         {
-            HttpCookie cookie = Request.Cookies["loginUsuario"];
-
-            if (cookie == null)
-            {
-                icone.Visible = false;
-                dropdown.Visible = false;
-            }
-
-            if (cookie == null)
+            Identificador = new Identificador(BD, this);
+            if (!Identificador.EhAdministrador())
                 Response.Redirect("login.aspx");
-            Email = cookie["Email"];
-            icone.Visible = true;
-            dropdown.Visible = true;
 
-            cookie.HttpOnly = true;
         }
 
         protected void btnSair_Click(object sender, EventArgs e)
         {
-            if (Request.Cookies["loginUsuario"] != null)
-            {
-                Response.Cookies["loginUsuario"].Expires = DateTime.Now.AddDays(-1);
-            }
-            Response.Redirect("index.aspx");
+            Identificador.Logout();
         }
     }
 }

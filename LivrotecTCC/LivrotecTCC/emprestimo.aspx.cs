@@ -21,14 +21,6 @@ namespace LivrotecTCC
 
             if (cookie != null)
             {
-                string emailUsuario = cookie["Email"];
-
-                string emailUrl = Request["email"];
-
-                if (emailUrl != emailUsuario)
-                {
-                    Response.Redirect("login.aspx");
-                }
 
                 cookie.HttpOnly = true;
             }
