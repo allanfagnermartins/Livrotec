@@ -24,58 +24,58 @@ namespace LivrotecTCC
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Controle ISBN.
+        /// Controle TxtISBN.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ISBN;
+        protected global::System.Web.UI.WebControls.TextBox TxtISBN;
 
         /// <summary>
-        /// Controle litNome.
+        /// Controle secNome.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litNome;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl secNome;
 
         /// <summary>
-        /// Controle Nome.
+        /// Controle TxtNome.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Nome;
+        protected global::System.Web.UI.WebControls.TextBox TxtNome;
 
         /// <summary>
-        /// Controle litSinopse.
+        /// Controle secCapa.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litSinopse;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl secCapa;
 
         /// <summary>
-        /// Controle Sinopse.
+        /// Controle TxtSinopse.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Sinopse;
+        protected global::System.Web.UI.WebControls.TextBox TxtSinopse;
 
         /// <summary>
-        /// Controle litFotoCapa.
+        /// Controle secImagem.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litFotoCapa;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl secImagem;
 
         /// <summary>
         /// Controle fileUp.
@@ -96,12 +96,12 @@ namespace LivrotecTCC
         protected global::System.Web.UI.WebControls.Button btnLogin;
 
         /// <summary>
-        /// Controle erro.
+        /// Controle txtErro.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label erro;
+        protected global::System.Web.UI.WebControls.Label txtErro;
     }
 }

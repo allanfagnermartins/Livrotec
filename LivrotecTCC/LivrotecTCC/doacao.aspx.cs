@@ -5,91 +5,68 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
+using System.Globalization;
 
 namespace LivrotecTCC
 {
     public partial class doacao : System.Web.UI.Page
     {
         BancoDeDados BD = new BancoDeDados();
+        Livro livro;
+        Identificador Identificador;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Identificador = new Identificador(BD, this);
+            if (!Identificador.EhAdministrador())
+                Response.Redirect("login.aspx");
+            secNome.Visible = false;
+            secImagem.Visible = false;
+            secCapa.Visible = false;
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            checarISBNdoacao();
+            Salvar();
         }
-        public bool ValidarCampos()
+        public string ValidarCampos(Livro livro)
         {
-            if (ISBN.Text == "" || Nome.Text == "" || Sinopse.Text == "" || fileUp.PostedFile == null)
-            {
-                erro.Text = "Preencha todos os campos!";
-                return false;
-            }
-            if (ISBN.Text.Length > 10)
-            {
-                erro.Text = "ISBN inválido. Máximo 10 caracteres.";
-                return false;
-            }
-            if (Nome.Text.Length > 100)
-            {
-                erro.Text = "Nome inválido. Máximo 100 caracteres.";
-                return false;
-            }
-            if (Sinopse.Text.Length > 2000)
-            {
-                erro.Text = "Sinopse inválido. Máximo 2000 caracteres.";
-                return false;
-            }
+            if (livro.ISBN == "" || livro.Nome == "" || livro.Sinopse == "" || fileUp.PostedFile == null)
+                return "Preencha todos os campos!";    
+            if (livro.ISBN.Length > 10)
+                return "ISBN inválido. Máximo 10 caracteres.";
+            if (livro.Nome.Length > 100)
+                return "Nome inválido. Máximo 100 caracteres.";
+            if (livro.Sinopse.Length > 2000)
+                return "Sinopse inválido. Máximo 2000 caracteres.";
             string TipoArq = fileUp.PostedFile.ContentType;
             if (TipoArq != "image/jpeg")
-            {
-                erro.Text = "Arquivo não permitido! Somente Jpeg.";
-                return false;
-            }
-            return true;
+                return "Arquivo não permitido! Somente Jpeg.";
+            
+            return null;
         }
-        void checarISBNdoacao()
+        void Salvar()
         {
-            if (BD.Livros.consultarISBNDoacao(ISBN.Text) != null)
-            {
-                BD.Livros.ConfirmarDoacaoLivroExistente(ISBN.Text);
-                Nome.Visible = false;
-                Sinopse.Visible = false;
-                fileUp.Visible = false;
-                ISBN.Text = "";
-                Nome.Text = "";
-                Sinopse.Text = "";
-                litNome.Text = "";
-                litSinopse.Text = "";
-                litFotoCapa.Text = "";
-                erro.Text = "";
-            }
+            livro = new Livro(TxtISBN.Text, TxtNome.Text, 0,TxtISBN.Text, TxtSinopse.Text ) ;
+            
+            var JaTemLivro = BD.Livros.consultarISBNDoacao(livro.ISBN) != null;
+
+            secNome.Visible = !JaTemLivro;
+            secImagem.Visible = !JaTemLivro;
+            secCapa.Visible = !JaTemLivro;
+
+            if (JaTemLivro)
+                BD.Livros.ConfirmarDoacaoLivroExistente(livro.ISBN);
             else
-            {
-                Nome.Visible = true;
-                Sinopse.Visible = true;
-                fileUp.Visible = true;
-                litNome.Text = "Nome Livro";
-                litFotoCapa.Text = "Foto da Capa";
-                litSinopse.Text = "Sinopse";
-                if (ValidarCampos())
+            { 
+                var erro = ValidarCampos(livro);
+                if (erro != null)
                 {
-                    string NomeArq = Path.GetFileName(fileUp.PostedFile.FileName);
-                    BD.Livros.confirmarDoacaoLivroNovo(ISBN.Text, Nome.Text, Sinopse.Text, Nome.Text.Replace(" ", ""));
-                    fileUp.PostedFile.SaveAs(Request.PhysicalApplicationPath + @"imagens\" + Nome.Text.Replace(" ", "") + ".jpg");
-                    Nome.CssClass = "form-contrl filtroLogin invisivel";
-                    Sinopse.CssClass = "form-contrl filtroLogin invisivel";
-                    fileUp.CssClass = "invisivel";
-                    ISBN.Text = "";
-                    Nome.Text = "";
-                    Sinopse.Text = "";
-                    litNome.Text = "";
-                    litSinopse.Text = "";
-                    litFotoCapa.Text = "";
-                    erro.Text = "";
+                    txtErro.Text = erro;
+                    return;
                 }
+                string NomeArq = Path.GetFileName(fileUp.PostedFile.FileName);
+                BD.Livros.confirmarDoacaoLivroNovo(livro.ISBN, livro.Nome, livro.Sinopse, livro.ISBN);
+                fileUp.PostedFile.SaveAs($@"{Request.PhysicalApplicationPath }imagens\{livro.ISBN}.jpg");
             }
         }
 

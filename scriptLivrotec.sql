@@ -93,28 +93,28 @@ insert into usuario values('camilasantana@gmail.com', 2, 'senha', 'Camila Santan
 insert into usuario values('sofiabretas@gmail.com', 1, 'senha', 'Sofia Bretas', '13985125135', '35141251200', false, null, 0, 0);
 
 insert into livro values('8576862549','Os Garotos Corvos', 'Todo ano, na véspera do Dia de São Marcos, Blue Sargent vai com sua mãe clarividente até uma igreja abandonada para ver os espíritos daqueles que vão morrer em breve. Blue nunca consegue vê-los - até este ano, quando um garoto emerge da escuridão e fala diretamente com ela. Seu nome é Gansey, e ela logo descobre que ele é um estudante rico da Academia Aglionby, a escola particular da cidade.',
-1, 'capaTeste');
+1, '8576862549');
 
 insert into livro values('8525068462', 'A Redoma de Vidro', 
 'Publicado originalmente em 1963, esta edição, com tradução de Chico Mattoso, traz nova capa e desenhos da autora. Lançado semanas antes da morte de Sylvia, o livro é repleto de referências autobiográficas, e a narrativa é inspirada nos acontecimentos do verão de 1952, quando Sylvia Plath tentou o suicídio e foi internada em uma clínica psiquiátrica.',
-1,'capaRedoma');
+1,'8525068462');
 
 insert into livro values('858105045X', 'Salem', 
 'Ambientado na cidadezinha de Jerusalems Lot, na Nova Inglaterra, o romance conta a história de três forasteiros. Ben Mears, um escritor que viveu alguns anos na cidade quando criança e está disposto a acertar contas com o próprio passado; Mark Petrie, um menino obcecado por monstros e filmes de terror; e o Senhor Barlow, uma figura misteriosa que decide abrir uma loja na cidade.',
-1, 'capaSalem');
+1, '858105045X');
 
 insert into livro values('8594540183', 'Frankenstein', 
 'O brilhante e pouco ortodoxo doutor Victor Frankestein trabalha na criação de um monstro com partes de diferentes corpos humanos. Após ser rejeitada pelo criador, a criatura escapa e passa a agir com uma violenta sede de vingança.',
-1,'capaFrankestein');
+1,'8594540183');
 insert into livro values('6586490294','O morro dos ventos uivantes', 
 'Emily Brontë nasceu em 1818 em Yorkshire, no interior da Inglaterra. Em vida, foi obrigada a esconder seu gênero sob o pseudônimo masculino Ellis Bell para que pudesse publicar suas obras. Das três irmãs Brontë, Emily é a mais velha e também a de biografia mais misteriosa: embora a maior parte de seus diários tenha sido queimada, ela ganhou fama de ter uma personalidade reclusa e obscura. Emily morreu de tuberculose um ano após a publicação deste que é seu único romance, e jamais descobriu que se tornou um dos maiores nomes da literatura mundial.',
-0,'capaMorroVentosUivantes');
+2,'6586490294');
 insert into livro values('8582350791','De volta aos quinze', 
 'Ao ligar seu antigo computador, a protagonista é transportada para o primeiro dia no colegial, quando tinha 15 anos. Agora, ela vai tentar consertar a vida de todos ao seu redor, mas cada mudança no passado impacta o futuro de todos — e nem sempre para melhor"',
-10,'capaVoltaAosQuinze');
+10,'8582350791');
 insert into livro values('8501112429', 'Assassins Creed Origins', 
 'Bayek sempre soube que seu destino estava em Siuá. Ele se tornará protetor da cidade, assim como o pai. Mas, quando um mensageiro misterioso chega à cidade, sua espera pacífica chega ao fim.
 O protetor parte imediatamente após receber a mensagem, deixando para trás um rastro de perguntas e incertezas. Bayek então inicia uma jornada em busca de respostas. Enquanto ele segue o Nilo em sua procura, por todo o país uma conspiração se desenrola.',
-1,'capaJuramentodoDeserto');
+1,'8501112429');
 
 

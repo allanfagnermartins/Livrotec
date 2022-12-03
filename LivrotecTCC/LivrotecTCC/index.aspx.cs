@@ -10,47 +10,40 @@ namespace LivrotecTCC
 {
     public partial class index1 : System.Web.UI.Page
     {
-        public string Email;
+        public string Email => Identificador.Email;
         BancoDeDados BD = new BancoDeDados();
-
+        Identificador Identificador;
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Cache.SetCacheability(HttpCacheability.NoCache);
-            Response.Cache.SetMaxAge(TimeSpan.Zero);
-            Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches);
-            Response.Cache.SetNoStore();
-            HttpCookie cookie = Request.Cookies["loginUsuario"];
+            Identificador = new Identificador(BD, this);
+
+             
 
             AreaLogin.Visible= true;
 
-            if (cookie == null)
+            if (Identificador.LoginValido())
+            {
+                AreaLogin.Visible = false;
+                icone.Visible = true;
+                dropdown.Visible = true;
+                if (Identificador.EhAdministrador())
+                    Response.Redirect("admin.aspx");
+            }
+            else
             {
                 icone.Visible = false;
                 dropdown.Visible = false;
             }
 
-            if (cookie != null)
-            {
-                AreaLogin.Visible = false;
-                Email = cookie["Email"];
-                icone.Visible = true;
-                dropdown.Visible = true;
-                if (BD.Usuarios.VerificarAdmin(cookie["Email"]))
-                    Response.Redirect("admin.aspx");
-            }
-            
-            if (Email == "" || Email == null)
-                CarregarLivros();
-            else
+            if (Identificador.EstaLogado())
                 CarregarLivrosLogin();
+            else
+                CarregarLivros();
 
         }
 
         void CarregarLivros()
         {
-            HttpCookie cookie = Request.Cookies["loginUsuario"];
-            if (cookie != null)
-                 Email = cookie["Email"];
             List<Livro> listaLivros = BD.Livros.ConsultarTodos();
             MainTodasFilas.Visible = true; 
             FilasRepeater.DataSource = listaLivros;
@@ -59,15 +52,13 @@ namespace LivrotecTCC
 
         void CarregarLivrosLogin()
         {
-            HttpCookie cookie = Request.Cookies["loginUsuario"];
-            Email = cookie["Email"];
             MainOutrasFilas.Visible = true;
 
-            List<Livro> listaLivros = BD.Livros.ConsultarMeus(Email);
+            List<Livro> listaLivros = BD.Livros.ConsultarMeus(Identificador.Email);
             MinhasFilasRepeater.DataSource = listaLivros;
             MinhasFilasRepeater.DataBind();
 
-            List<Livro> listaNaoLivros = BD.Livros.ConsultarNaoMeus(Email);
+            List<Livro> listaNaoLivros = BD.Livros.ConsultarNaoMeus(Identificador.Email);
             OutrasFilasRepeater.DataSource = listaNaoLivros;
             OutrasFilasRepeater.DataBind();
 
@@ -79,10 +70,7 @@ namespace LivrotecTCC
         }
         protected void btnSair_Click(object sender, EventArgs e)
         {
-            if (Request.Cookies["loginUsuario"] != null)
-                Response.Cookies["loginUsuario"].Expires = DateTime.Now.AddDays(-1);
-
-            Response.Redirect("index.aspx");
+            Identificador.Logout();
         }
 
     }

@@ -53,7 +53,7 @@
         <main class="areaLivros" id="MainTodasFilas" runat="server" visible="false">
             <asp:Repeater id="FilasRepeater" runat="server"> 
                 <ItemTemplate>
-                    <a href='livroadmin.aspx?cd=<%# Eval("ISBN") %>&email=<%#this.Email%> }' class = 'cardFila'>
+                    <a href='livroadmin.aspx?cd=<%# Eval("ISBN") %>' class = 'cardFila'>
                         <img src='imagens/<%# Eval("Caminho") %>.jpg'  class='imgLivro' alt='capa do livro '<%# Eval("Nome") %>>
                         <p id='titulo'><%# Eval("Nome") %></p>
                     </a> 

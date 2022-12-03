@@ -60,7 +60,7 @@
         <main style="margin-top: 16px; margin-bottom: 36px;" class="areaLivros" id="MainMeusLivros" runat="server" visible="false">
             <asp:Repeater id="MinhasFilasRepeater" runat="server"> 
                 <ItemTemplate>
-                    <a href='livro.aspx?cd=<%# Eval("ISBN") %>&email=<%#this.Email%> }' class = 'cardFila'>
+                    <a href='livro.aspx?cd=<%# Eval("ISBN") %>' class = 'cardFila'>
                         <img src='imagens/<%# Eval("Caminho") %>.jpg'  class='imgLivro' alt='capa do livro '<%# Eval("Nome") %>>
                         <p id='titulo'><%# Eval("Nome") %></p>
                     </a> 
@@ -72,7 +72,7 @@
         <main style="margin-top: 16px; margin-bottom: 36px;" id="MainOutrasFilas" class="areaLivros" runat="server" visible="false">
             <asp:Repeater id="OutrasFilasRepeater" runat="server"> 
                 <ItemTemplate>
-                    <a href='livro.aspx?cd=<%# Eval("ISBN") %>&email=<%#this.Email%> }' class = 'cardFila'>
+                    <a href='livro.aspx?cd=<%# Eval("ISBN") %>' class = 'cardFila'>
                         <img src='imagens/<%# Eval("Caminho") %>.jpg'  class='imgLivro' alt='capa do livro '<%# Eval("Nome") %>>
                         <p id='titulo'><%# Eval("Nome") %></p>
                     </a> 
@@ -83,7 +83,7 @@
         <main class="areaLivros" id="MainTodasFilas" runat="server" visible="false">
             <asp:Repeater id="FilasRepeater" runat="server"> 
                 <ItemTemplate>
-                    <a href='livro.aspx?cd=<%# Eval("ISBN") %>&email=<%#this.Email%> }' class = 'cardFila'>
+                    <a href='livro.aspx?cd=<%# Eval("ISBN") %>' class = 'cardFila'>
                         <img src='imagens/<%# Eval("Caminho") %>.jpg'  class='imgLivro' alt='capa do livro '<%# Eval("Nome") %>>
                         <p id='titulo'><%# Eval("Nome") %></p>
                     </a> 

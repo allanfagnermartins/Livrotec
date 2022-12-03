@@ -10,23 +10,22 @@ namespace LivrotecTCC
 {
     public partial class emprestimos : System.Web.UI.Page
     {
+        string Email => Identificador.Email;
         BancoDeDados BD = new BancoDeDados();
+        Identificador Identificador;
         protected void Page_Load(object sender, EventArgs e)
         {
+            Identificador = new Identificador(BD, this);
+            if (!Identificador.EhAdministrador())
+                Response.Redirect("login.aspx");
             CarregarEmprestimos();
 
-            HttpCookie cookie = Request.Cookies["loginUsuario"];
 
-            if (cookie != null)
-            {
-                cookie.HttpOnly = true;
-            }
 
         }
 
         void CarregarEmprestimos()
         {
-            HttpCookie cookie = Request.Cookies["loginUsuario"];
             litEmprestimos.Text = "";
             List<Emprestimo> listaEmprestimos = BD.Emprestimos.ConsultarTodos();
             foreach (var emprestimo in listaEmprestimos)
@@ -35,7 +34,7 @@ namespace LivrotecTCC
 
                 if (emprestimo.DataEmprestimo != null)
                 {
-                    litEmprestimos.Text += $@"<a href='emprestimo.aspx?cd={ emprestimo.Codigo}&email={cookie["Email"]}' class='cardEmprestimo'> 
+                    litEmprestimos.Text += $@"<a href='emprestimo.aspx?cd={ emprestimo.Codigo}&email={Email}' class='cardEmprestimo'> 
                     <section>
                         <img src='imagens/{livro.Caminho}.jpg'  class='imgLivroEmprestimo' alt='capa do livro '{livro.Nome}>
                     </section>

@@ -11,49 +11,34 @@ namespace LivrotecTCC
     public partial class livro : System.Web.UI.Page
     {
 
-        string Email;
+        public string Email => Identificador.Email;
         string ISBN;
         BancoDeDados BD = new BancoDeDados();
+        Identificador Identificador;
         protected void Page_Load(object sender, EventArgs e)
         {
-            HttpCookie cookie = Request.Cookies["loginUsuario"];
-            ISBN = Request["cd"];
-            Email = Request["email"];
+            Identificador = new Identificador(BD, this);
+            ISBN = Request["cd"]; 
 
             AreaLogin.Visible = true;
 
-            if (cookie == null)
-            {
-                icone.Visible = false;
-                dropdown.Visible = false;
-            }
-
-            if (cookie != null)
+            if (Identificador.LoginValido())
             {
                 AreaLogin.Visible = false;
-                Email = cookie["Email"];
                 icone.Visible = true;
                 dropdown.Visible = true;
                 litInicialEmail.Text = "<p>" + Email.Substring(0, 1).ToUpper() + "</p>";
             }
-
-            if (ISBN != null)
+            else
             {
-                if(Email != null)
-                {
-                    CarregarInfosLivro();
-                    NomeBotaoLivro();
-                }
-                else
-                {
-                    Response.Redirect("index.aspx");
-                }
+                icone.Visible = false;
+                dropdown.Visible = false;
             }
-
-            else 
-            {
+            if (ISBN == null)
                 Response.Redirect("index.aspx");
-            }
+
+            CarregarInfosLivro();
+            NomeBotaoLivro();
 
         }
 
@@ -144,12 +129,9 @@ namespace LivrotecTCC
 
         void ClicarBotao()
         {
-            HttpCookie cookie = Request.Cookies["loginUsuario"];
 
-            if (cookie != null)
+            if (Identificador.LoginValido())
             {
-                Email = cookie["Email"];
-
 
                 EstadoUsuarioFila Estado = BD.Filas.EstadoUsuario(Email, ISBN);
                 if (Estado.InscritoFila)
@@ -173,11 +155,7 @@ namespace LivrotecTCC
         }
         protected void btnSair_Click(object sender, EventArgs e)
         {
-            if (Request.Cookies["loginUsuario"] != null)
-            {
-                Response.Cookies["loginUsuario"].Expires = DateTime.Now.AddDays(-1);
-            }
-            Response.Redirect("index.aspx");
+            Identificador.Logout();
         }
 
     }

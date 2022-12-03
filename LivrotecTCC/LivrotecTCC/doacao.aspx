@@ -40,28 +40,28 @@
                 </section>
                 <section>
                     <p>ISBN</p>
-                    <asp:TextBox ID="ISBN" runat="server" class="form-contrl filtroLogin" placeholder="Digite o ISBN do livro"></asp:TextBox>
+                    <asp:TextBox ID="TxtISBN" runat="server" class="form-contrl filtroLogin" placeholder="Digite o ISBN do livro"></asp:TextBox>
                 </section>
 
-                <section>
-                    <p><asp:Literal ID="litNome" runat="server"></asp:Literal></p>
-                    <asp:TextBox ID="Nome" runat="server" class="form-contrl filtroLogin invisivel" placeholder="Digite o nome do livro"></asp:TextBox>
+                <section id="secNome" runat="server">
+                    <p>Nome Livro</p>
+                    <asp:TextBox ID="TxtNome" runat="server" class="form-contrl filtroLogin" placeholder="Digite o nome do livro"></asp:TextBox>
                 </section>
-                <section>
-                    <p><asp:Literal ID="litSinopse" runat="server"></asp:Literal></p>
-                    <asp:TextBox ID="Sinopse" runat="server" class="form-contrl filtroLogin invisivel" placeholder="Digite a sinopse do livro"></asp:TextBox>
+                <section id="secCapa" runat="server" >
+                    <p>Sinopse</p>
+                    <asp:TextBox ID="TxtSinopse" runat="server" class="form-contrl filtroLogin" placeholder="Digite a sinopse do livro"></asp:TextBox>
                 </section>
 
-                <section>
-                    <p><asp:Literal ID="litFotoCapa" runat="server"></asp:Literal></p>
-                    <asp:FileUpload ID="fileUp" class="invisivel" runat="server" />
+                <section id="secImagem" runat="server">
+                    <p>Foto da Capa</p>
+                    <asp:FileUpload ID="fileUp" runat="server" />
                 </section>
 
                 <section style="text-align:center;">
                     <asp:Button ID="btnLogin" runat="server" Text="Confirmar" OnClick="btnLogin_Click" />
                 </section>
                 <section class="erro" >
-                <asp:Label ID="erro" runat="server" Text="" ></asp:Label>
+                <asp:Label ID="txtErro" runat="server" Text="" ></asp:Label>
                 </section>
             </div>
         </main>
