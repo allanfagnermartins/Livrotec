@@ -43,7 +43,39 @@
             </div>
         </header>
 
+        <main id="doacao">
+            <div>
+                <section style="text-align:center;">
+                    <h2>Editar ISBN: <%= this.ISBN %></h2>
+                </section>
+ 
 
+                <section id="secNome" runat="server">
+                    <p>Nome Livro</p>
+                    <asp:TextBox ID="TxtNome" runat="server" class="form-contrl filtroLogin" placeholder="Digite o nome do livro"></asp:TextBox>
+                </section>
+                <section id="secCapa" runat="server" >
+                    <p>Sinopse</p>
+                    <asp:TextBox ID="TxtSinopse" runat="server" class="form-contrl filtroLogin" placeholder="Digite a sinopse do livro"></asp:TextBox>
+                </section>
+                <section id="Section1" runat="server" >
+                    <p>Quantidade Exemplares</p>
+                    <asp:TextBox ID="TxtQuantidade" runat="server" type="number" class="form-contrl filtroLogin" placeholder="Digite a quantidade de exemplares"></asp:TextBox>
+                </section>
+
+                <section id="secImagem" runat="server">
+                    <p>Foto da Capa</p>
+                    <asp:FileUpload ID="fileUp" runat="server" />
+                </section>
+
+                <section style="text-align:center;">
+                    <asp:Button ID="btnLogin" runat="server" Text="Confirmar" OnClick="btnLogin_Click" />
+                </section>
+                <section class="erro" >
+                <asp:Label ID="txtErro" runat="server" Text="" ></asp:Label>
+                </section>
+            </div>
+        </main>
  
 
 

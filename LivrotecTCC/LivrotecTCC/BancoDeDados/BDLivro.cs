@@ -64,7 +64,16 @@ namespace LivrotecTCC
 		{
 			ExecutarProc("confirmarDoacaoLivroNovo", ("vISBN", isbn), ("vNome", nome), ("vSinopse", sinopse), ("vCaminho", caminho));
 		}
-
+		public void Editar(Livro livro)
+		{
+			ExecutarProc("editarLivro",
+				("vISBN", livro.ISBN),
+				("vNome", livro.Nome),
+				("vSinopse", livro.Sinopse),
+				("vQuantidade", livro.Quantidade),
+				("vCaminho", livro.Caminho)
+			);
+		}
 	}
 }
 

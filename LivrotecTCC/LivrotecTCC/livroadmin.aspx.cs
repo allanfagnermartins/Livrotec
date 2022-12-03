@@ -22,7 +22,10 @@ namespace LivrotecTCC
             if (!Identificador.EhAdministrador())
                 Response.Redirect("login.aspx");
 
-            
+            if (BD.Livros.consultarISBNDoacao(ISBN) == null)
+                Response.Redirect("livrosadmin.aspx");
+
+
             CarregarInfosLivro();
 
         }
@@ -47,7 +50,7 @@ namespace LivrotecTCC
 
         protected void btnEditarLivro_Click(object sender, EventArgs e)
         {
-            Response.Redirect("editarlivro.aspx");
+            Response.Redirect($"editarlivro.aspx?cd={ISBN}");
         }
 
         protected void btnSair_Click(object sender, EventArgs e)

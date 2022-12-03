@@ -338,6 +338,19 @@ begin
 	call CriarEmprestimo(vEmail, codigo);
 end$$
 
+Drop Procedure if Exists editarLivro$$
+Create Procedure editarLivro(vISBN varchar(200), 	vNome VARCHAR(100), vSinopse text, vQuantidade int, vCaminho varchar(200) )
+begin
+	update Livro
+	set 	 
+		nm_livro = vNome,
+		ds_sinopse_livro = vSinopse,
+		qt_livro = vQuantidade,
+		nm_caminho_foto_livro = vCaminho
+	where nm_isbn = vISBN ;
+end$$
+
+
 Drop Procedure if Exists adicionarRoubo$$
 Create Procedure adicionarRoubo(vEmail varchar(200))
 begin
