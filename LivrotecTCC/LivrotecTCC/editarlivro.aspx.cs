@@ -79,7 +79,7 @@ namespace LivrotecTCC
             var novoLivro = new Livro(ISBN, Nome, Quantidade, ISBN, Sinopse);
             BD.Livros.Editar(novoLivro);
             if(fileUp.HasFile)
-                fileUp.PostedFile.SaveAs($@"{Request.PhysicalApplicationPath}imagens\{novoLivro.ISBN}.jpg");
+                fileUp.PostedFile.SaveAs($@"{Request.PhysicalApplicationPath}imagens\{ISBN}.jpg");
             Response.Redirect($"livroadmin.aspx?cd={ISBN}");
         }
         protected void btnSair_Click(object sender, EventArgs e)

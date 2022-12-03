@@ -18,7 +18,7 @@ namespace LivrotecTCC
             email.Text = "";
             senha.Text = "";
 
-            if (Identificador.EstaLogado())
+            if (Identificador.LoginValido())
             {
                 if (Identificador.EhAdministrador())
                     Response.Redirect("admin.aspx"); 
