@@ -352,3 +352,34 @@ begin
 		update usuario set ic_restrito_emprestimo = true;
 	end if;
 end$$
+
+Drop Procedure if Exists consultarEmail$$
+Create Procedure consultarEmail(vEmail varchar(200))
+begin
+	select count(*) from usuario where nm_email_usuario = vEmail;
+end$$
+
+Drop Procedure if Exists editarUsuario$$
+Create Procedure editarUsuario(vEmail varchar(200), vNovaSenha varchar(64), vNovoNome varchar(150),  vNovoTelefone varchar(20), vNovoCPF varchar(20))
+begin
+
+	if vNovoNome is not null then
+		update usuario set nm_usuario = vNovoNome where nm_email_usuario = vEmail;
+	end if;
+
+	if vNovaSenha is not null then
+		update usuario set nm_senha_usuario = vNovaSenha where nm_email_usuario = vEmail;
+	end if;
+
+	if vNovoTelefone is not null then
+		update usuario set nm_telefone_usuario = vNovoTelefone where nm_email_usuario = vEmail;
+	end if;
+
+	if vNovoCPF is not null then
+		update usuario set nm_cpf_usuario = vNovoCPF where nm_email_usuario = vEmail;
+	end if;
+
+end$$
+
+
+

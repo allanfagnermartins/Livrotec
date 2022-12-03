@@ -33,11 +33,12 @@
             </div>
         </header>
 
-        <main id="doacao">
+        <main id="mainDoacao">
             <div>
                 <section style="text-align:center;">
                     <h2>Novo usuário</h2>
                 </section>
+
                 <section>
                     <p>Email</p>
                     <asp:TextBox ID="Email" runat="server" class="form-contrl filtroLogin" placeholder="Digite o Email do usuário"></asp:TextBox>

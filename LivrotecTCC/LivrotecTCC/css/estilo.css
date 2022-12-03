@@ -384,6 +384,30 @@ body {
     margin-block: 16px;
 }
 
+#btnEditarUsuario {
+    width: 120px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    background-color: #8A6B32;
+    color: white;
+    padding-right: 2.5%;
+    padding-left: 2.5%;
+    margin-block: 16px;
+}
+
+#btnSelecionarUsuario {
+    width: 120px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    background-color: #8A6B32;
+    color: white;
+    padding-right: 2.5%;
+    padding-left: 2.5%;
+    margin-block: 16px;
+}
+
 .erro {
     font-size:14px;
     color:red;
@@ -579,7 +603,19 @@ body {
     transform: translate(-50%);
 }
 
-#doacao {
+#mainDoacao {
+    position: absolute;
+    top: calc(50% + 40px);
+    max-width: 900px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'hind-kochi-medium-3', sans-serif;
+    color: #232F3E;
+    display: flex;
+    gap: 100px;
+}
+
+#areaEditarUsuario {
     position: absolute;
     top: calc(50% + 40px);
     max-width: 900px;
