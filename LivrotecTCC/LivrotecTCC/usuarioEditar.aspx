@@ -15,13 +15,14 @@
 
 <body>
     <form id="form1" runat="server">
-        <header id="headerTelaPrincipal">
+         <header id="headerTelaPrincipal">
             <a href='index.aspx'>
                 <div id="areaLogo">
-                    <img src="imagens/LogoLivrotec.png"/ class="logoLivrotec"/>
+                    <img src="imagens/LogoLivrotec.png"/ class="logoLivrotec">
                 </div>
             </a>
-           <section class="icone" id="icone" runat="server"> <p><%=  this.Email?.Substring(0, 1)?.ToUpper() %> </p> </section>
+
+           <section class="icone" id="icone" runat="server"> <p><%=  this.Email?.Substring(0, 1)?.ToUpper()  %> </p> </section>
 
             <div class="dropdown" id ="dropdown" runat="server">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -32,10 +33,6 @@
                 </div>
             </div>
 
-            <div id="areaUsuario">
-                <div id="notificacoesUsuario"></div>
-                <div id="funcoesUsuario"></div>
-            </div>
         </header>
 
         <main id="areaEditarUsuario">

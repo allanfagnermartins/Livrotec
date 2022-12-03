@@ -1,5 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="emprestimo.aspx.cs" Inherits="LivrotecTCC.emprestimo" %>
 
+<%@ Register Src="~/LHeader.ascx" TagPrefix="uc1" TagName="LHeader" %>
+
+
 <!DOCTYPE html>
 
 <html>
@@ -7,9 +10,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" 
-    rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" 
-    crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen" />
     <title>Empréstimo</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -17,23 +17,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-
-        <header id="headerTelaPrincipal">
-
-            <asp:Literal ID="litLogo" runat="server"></asp:Literal>
-
-            <a href='index.aspx'>
-                <div id="areaLogo">
-                    <img src="imagens/LogoLivrotec.png"/ class="logoLivrotec">
-                </div>
-            </a>
-
-            <div id="areaUsuario">
-                <div id="notificacoesUsuario"></div>
-                <div id="funcoesUsuario"></div>
-            </div>
-        </header>
-
+         
+        <uc1:LHeader runat="server" ID="LHeader" />
         <main id="areaLivro">
             <div id="areaFotoLivro">
                 <asp:Literal ID="litImagemLivro" runat="server"></asp:Literal>

@@ -1,5 +1,8 @@
 ﻿ <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="LivrotecTCC.index1" %>
 
+<%@ Register Src="~/LHeader.ascx" TagPrefix="uc1" TagName="LHeader" %>
+
+
 <!DOCTYPE html>
 
 <html>
@@ -21,40 +24,12 @@
 <body>
     <form id="form1" runat="server">
 
-        <header id="headerTelaPrincipal">
-            <a href='index.aspx'>
-                <div id="areaLogo">
-                    <img src="imagens/LogoLivrotec.png"/ class="logoLivrotec">
-                </div>
-            </a>
 
-            <a href='login.aspx' ID="AreaLogin" runat="server">
-                <div id="areaLogin">
-                    <h2> Login </h2>
-                </div>
-            </a>
-
-           <section class="icone" id="icone" runat="server"> <p><%=  this.Email?.Substring(0, 1)?.ToUpper()  %> </p> </section>
-            <div class="dropdown" id ="dropdown" runat="server">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-                <div class="dropdown-content">
-                      <asp:LinkButton ID="btnSair" runat="server" OnClick="btnSair_Click" >Sair</asp:LinkButton>  
-                </div>
-            </div>
-
-            <div id="areaUsuario">
-                <div id="notificacoesUsuario"></div>
-                <div id="funcoesUsuario"></div>
-            </div>
-        </header>
-
-
-        <div id="areaFiltros">
+        <uc1:LHeader runat="server" ID="LHeader" />
+        <!--<div id="areaFiltros">
             <input placeholder="Buscar livro" type="text" name="Busca" class="form-control" id="filtroBusca">
             <button id="btnFiltro" onclick="filtroBusca"><i class="fa fa-search"></i> </button>
-        </div>
+        </div>-->
         
         <h2 style='max-width: 85%; margin: auto;' id="TituloMinhasFilas" runat="server" visible="false"> Minhas Filas </h2>
         <main style="margin-top: 16px; margin-bottom: 36px;" class="areaLivros" id="MainMeusLivros" runat="server" visible="false">

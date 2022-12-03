@@ -11,52 +11,43 @@ namespace LivrotecTCC
 {
 
 
-    public partial class emprestimos
+    public partial class LHeader
     {
 
         /// <summary>
-        /// Controle form1.
+        /// Controle AreaLogin.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor AreaLogin;
 
         /// <summary>
-        /// Controle LHeader.
+        /// Controle icone.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::LivrotecTCC.LHeader LHeader;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl icone;
 
         /// <summary>
-        /// Controle ScriptManager1.
+        /// Controle dropdown.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dropdown;
 
         /// <summary>
-        /// Controle up1.
+        /// Controle btnSair.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel up1;
-
-        /// <summary>
-        /// Controle litEmprestimos.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litEmprestimos;
+        protected global::System.Web.UI.WebControls.LinkButton btnSair;
     }
 }

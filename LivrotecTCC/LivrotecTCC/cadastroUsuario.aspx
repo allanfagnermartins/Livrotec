@@ -1,5 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="cadastroUsuario.aspx.cs" Inherits="LivrotecTCC.cadastroUsuario" %>
 
+<%@ Register Src="~/LHeader.ascx" TagPrefix="uc1" TagName="LHeader" %>
+
+
 <!DOCTYPE html>
 
 <html>
@@ -19,20 +22,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-
-        <header id="headerTelaPrincipal">
-            <a href='index.aspx'>
-                <div id="areaLogo">
-                    <img src="imagens/LogoLivrotec.png"/ class="logoLivrotec">
-                </div>
-            </a>
-
-            <div id="areaUsuario">
-                <div id="notificacoesUsuario"></div>
-                <div id="funcoesUsuario"></div>
-            </div>
-        </header>
-
+ 
+        <uc1:LHeader runat="server" ID="LHeader" />
         <main id="mainDoacao">
             <div>
                 <section style="text-align:center;">

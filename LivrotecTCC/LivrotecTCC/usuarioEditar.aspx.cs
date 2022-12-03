@@ -101,7 +101,7 @@ namespace LivrotecTCC
                 return;
             }
 
-            if (txtTelefone.Text.Length != 20 && txtTelefone.Text != "")
+            if (txtTelefone.Text.Length != 11 && txtTelefone.Text != "")
             {
                 erro.Text = "";
                 erro.Text = "Digite um número de telefone válido";
@@ -109,7 +109,7 @@ namespace LivrotecTCC
                 return;
             }
 
-            if (txtCPF.Text.Length != 20 && txtCPF.Text != "")
+            if (txtCPF.Text.Length != 9 && txtCPF.Text != "")
             {
                 erro.Text = "";
                 erro.Text = "Digite um CPF válido";

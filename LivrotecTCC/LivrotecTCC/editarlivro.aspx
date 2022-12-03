@@ -1,5 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="editarlivro.aspx.cs" Inherits="LivrotecTCC.editarlivro" %>
 
+<%@ Register Src="~/LHeader.ascx" TagPrefix="uc1" TagName="LHeader" %>
+
+
 <!DOCTYPE html>
 
 <html>
@@ -17,31 +20,9 @@
 
 <body>
     <form id="form1" runat="server">
+        <uc1:LHeader runat="server" ID="LHeader" />
 
-        <header id="headerTelaPrincipal">
-            <a href='index.aspx'>
-                <div id="areaLogo">
-                    <img src="imagens/LogoLivrotec.png"/ class="logoLivrotec">
-                </div>
-            </a>
-
-           <section class="icone" id="icone" runat="server"> <p><%=  this.Email?.Substring(0, 1)?.ToUpper()  %> </p> </section>
-            <div class="dropdown" id ="dropdown" runat="server">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="    19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-                <div class="dropdown-content">
-                    <asp:LinkButton ID="btnSair" runat="server" OnClick="btnSair_Click" >Sair</asp:LinkButton>
-                </div>
-            </div>
-
-            <div id="areaUsuario">
-                <div id="notificacoesUsuario"></div>
-                <div id="funcoesUsuario"></div>
-            </div>
-        </header>
-
-        <main id="doacao">
+        <main id="mainDoacao">
             <div>
                 <section style="text-align:center;">
                     <h2>Editar ISBN: <%= this.ISBN %></h2>

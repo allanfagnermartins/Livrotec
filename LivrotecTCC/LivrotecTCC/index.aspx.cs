@@ -16,24 +16,9 @@ namespace LivrotecTCC
         protected void Page_Load(object sender, EventArgs e)
         {
             Identificador = new Identificador(BD, this);
-
-             
-
-            AreaLogin.Visible= true;
-
-            if (Identificador.LoginValido())
-            {
-                AreaLogin.Visible = false;
-                icone.Visible = true;
-                dropdown.Visible = true;
-                if (Identificador.EhAdministrador())
-                    Response.Redirect("admin.aspx");
-            }
-            else
-            {
-                icone.Visible = false;
-                dropdown.Visible = false;
-            }
+       
+            if (Identificador.EhAdministrador())
+                Response.Redirect("admin.aspx");
 
             if (Identificador.EstaLogado())
                 CarregarLivrosLogin();

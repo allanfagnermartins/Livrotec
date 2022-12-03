@@ -25,6 +25,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1;
+    margin-bottom: 4em;
 }
 
 #areaFiltros {

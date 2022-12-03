@@ -134,6 +134,7 @@
     <Content Include="login.aspx" />
     <Content Include="usuarioEditar.aspx" />
     <Content Include="Web.config" />
+    <Content Include="LHeader.ascx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="admin.aspx.cs">
@@ -244,6 +245,13 @@
     </Compile>
     <Compile Include="usuarioEditar.aspx.designer.cs">
       <DependentUpon>usuarioEditar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LHeader.ascx.cs">
+      <DependentUpon>LHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LHeader.ascx.designer.cs">
+      <DependentUpon>LHeader.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

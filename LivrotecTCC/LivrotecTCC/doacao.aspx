@@ -1,5 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="doacao.aspx.cs" Inherits="LivrotecTCC.doacao" %>
 
+<%@ Register Src="~/LHeader.ascx" TagPrefix="uc1" TagName="LHeader" %>
+
+
 <!DOCTYPE html>
 
 <html>
@@ -19,21 +22,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <uc1:LHeader runat="server" ID="LHeader" />
 
-        <header id="headerTelaPrincipal">
-            <a href='index.aspx'>
-                <div id="areaLogo">
-                    <img src="imagens/LogoLivrotec.png"/ class="logoLivrotec">
-                </div>
-            </a>
-
-            <div id="areaUsuario">
-                <div id="notificacoesUsuario"></div>
-                <div id="funcoesUsuario"></div>
-            </div>
-        </header>
-
-        <main id="doacao">
+        <main id="mainDoacao">
             <div>
                 <section style="text-align:center;">
                     <h2>Nova Doação</h2>

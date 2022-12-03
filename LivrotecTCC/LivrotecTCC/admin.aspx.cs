@@ -9,7 +9,6 @@ namespace LivrotecTCC
 {
     public partial class admin : System.Web.UI.Page
     {
-        public string Email => Identificador.Email;
         Identificador Identificador;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,11 +17,6 @@ namespace LivrotecTCC
             if (!Identificador.EhAdministrador())
                 Response.Redirect("login.aspx");
 
-        }
-
-        protected void btnSair_Click(object sender, EventArgs e)
-        {
-            Identificador.Logout();
         }
     }
 }

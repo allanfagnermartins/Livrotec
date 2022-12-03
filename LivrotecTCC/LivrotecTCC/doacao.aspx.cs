@@ -64,6 +64,7 @@ namespace LivrotecTCC
                     txtErro.Text = erro;
                     return;
                 }
+                txtErro.Text = null;
                 string NomeArq = Path.GetFileName(fileUp.PostedFile.FileName);
                 BD.Livros.confirmarDoacaoLivroNovo(livro.ISBN, livro.Nome, livro.Sinopse, livro.ISBN);
                 fileUp.PostedFile.SaveAs($@"{Request.PhysicalApplicationPath }imagens\{livro.ISBN}.jpg");
