@@ -352,7 +352,6 @@ begin
 		update usuario set ic_restrito_emprestimo = true;
 	end if;
 end$$
-
 Drop Procedure if Exists consultarEmail$$
 Create Procedure consultarEmail(vEmail varchar(200))
 begin
@@ -381,5 +380,40 @@ begin
 
 end$$
 
+Drop Procedure if Exists automatizarEmprestimo$$
+Create Procedure automatizarEmprestimo(vEmail varchar(200))
+begin
+	declare codigo text;
+	select nm_isbn into codigo from lugar_fila where nm_email_usuario = vEmail order by dt_entrada_fila asc limit 1;
+	call CriarEmprestimo(vEmail, codigo);
+end$$
+
+Drop Procedure if Exists criarUsuario$$
+Create Procedure criarUsuario(vEmail varchar(200), vSenha varchar(150), vNome varchar(150), vTelefone varchar(20), vCPF varchar(20))
+begin
+	insert into usuario values(vEmail, 2, vSenha, vNome, vTelefone, vCPF, false, null, 0, 0);
+end$$
+
+Drop Procedure if Exists validarEmail$$
+Create Procedure validarEmail(vEmail varchar(200))
+begin
+	select count(*) from usuario where nm_email_usuario = vEmail;
+end$$
+
+delimiter ;
+
+insert into emprestimo values (1, '8582350791', 'camilasantana@gmail.com', '2019-03-04', '2019-04-04', '2019-03-06', false);
+insert into emprestimo values (2, '6586490294', 'claradasilvabarriento@gmail.com', '2019-03-04', '2019-04-04', '2019-03-06', false);
+insert into emprestimo values (3, '858105045X', 'drianoreoul@gmail.com', '2019-03-04', '2019-04-04', '2019-03-06', false);
+insert into emprestimo values (4, '8501112429', 'evelyndasilva@gmail.com', '2019-03-04', '2019-04-04', '2019-03-06', false);
+insert into emprestimo values (5, '8576862549', 'allanfagnermartins@gmail.com', '2019-03-04', '2019-04-04', '2019-03-06', false);
+
+insert into emprestimo values (6, '8582350791', 'claradasilvabarriento@gmail.com', '2019-04-05', '2019-05-05', '2019-04-06', false);
+insert into emprestimo values (7, '6586490294', 'evelyndasilva@gmail.com', '2019-04-05', '2019-05-05', '2019-04-06', false);
+insert into emprestimo values (8, '858105045X', 'allanfagnermartins@gmail.com', '2019-04-05', '2019-05-05', '2019-04-06', false);
+insert into emprestimo values (9, '8501112429', 'camilasantana@gmail.com', '2019-04-05', '2019-05-05', '2019-04-06', false);
+insert into emprestimo values (10, '8576862549', 'drianoreoul@gmail.com', '2019-04-05', '2019-05-05', '2019-04-06', false);
+
+insert into emprestimo values (11, '6586490294', 'camilasantana@gmail.com', '2019-05-06', '2019-06-06', null, true);
 
 

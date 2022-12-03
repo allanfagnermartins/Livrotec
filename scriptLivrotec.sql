@@ -89,7 +89,7 @@ insert into usuario values('allanfagnermartins@gmail.com', 2, 'senha', 'Allan Fa
 insert into usuario values('drianoreoul@gmail.com', 2, 'senha', 'Adriano Fraga', '13917189374', '1892568493716', false, null, 0, 0);
 insert into usuario values('claradasilvabarriento@gmail.com', 2, 'senha', 'Clara Barriento', '13991325727','39675649836' , false, null, 0, 0);
 insert into usuario values('evelyndasilva@gmail.com', 2, 'senha', 'Evelyn da Silva', '13973816251', '6791236451', false, null, 0, 0);
-insert into usuario values('camilasantana@gmail.com', 2, 'senha', 'Camila Santana', '139917453', '27192172182', false, null, 0, 0);
+insert into usuario values('camilasantana@gmail.com', 2, 'senha', 'Camila Santana', '139917453', '27192172182', false, '2050-01-01', 0, 1);
 insert into usuario values('sofiabretas@gmail.com', 1, 'senha', 'Sofia Bretas', '13985125135', '35141251200', false, null, 0, 0);
 
 insert into livro values('8576862549','Os Garotos Corvos', 'Todo ano, na véspera do Dia de São Marcos, Blue Sargent vai com sua mãe clarividente até uma igreja abandonada para ver os espíritos daqueles que vão morrer em breve. Blue nunca consegue vê-los - até este ano, quando um garoto emerge da escuridão e fala diretamente com ela. Seu nome é Gansey, e ela logo descobre que ele é um estudante rico da Academia Aglionby, a escola particular da cidade.',
@@ -108,7 +108,7 @@ insert into livro values('8594540183', 'Frankenstein',
 1,'capaFrankestein');
 insert into livro values('6586490294','O morro dos ventos uivantes', 
 'Emily Brontë nasceu em 1818 em Yorkshire, no interior da Inglaterra. Em vida, foi obrigada a esconder seu gênero sob o pseudônimo masculino Ellis Bell para que pudesse publicar suas obras. Das três irmãs Brontë, Emily é a mais velha e também a de biografia mais misteriosa: embora a maior parte de seus diários tenha sido queimada, ela ganhou fama de ter uma personalidade reclusa e obscura. Emily morreu de tuberculose um ano após a publicação deste que é seu único romance, e jamais descobriu que se tornou um dos maiores nomes da literatura mundial.',
-2,'capaMorroVentosUivantes');
+0,'capaMorroVentosUivantes');
 insert into livro values('8582350791','De volta aos quinze', 
 'Ao ligar seu antigo computador, a protagonista é transportada para o primeiro dia no colegial, quando tinha 15 anos. Agora, ela vai tentar consertar a vida de todos ao seu redor, mas cada mudança no passado impacta o futuro de todos — e nem sempre para melhor"',
 10,'capaVoltaAosQuinze');

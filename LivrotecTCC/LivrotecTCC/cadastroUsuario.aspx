@@ -50,7 +50,7 @@
                 </section>
                 <section>
                     <p>Senha</p>
-                    <asp:TextBox ID="Senha" runat="server" class="form-contrl filtroLogin" placeholder="Digite a semja do usuário"></asp:TextBox>
+                    <asp:TextBox ID="Senha" runat="server" class="form-contrl filtroLogin" placeholder="Digite a senha do usuário"></asp:TextBox>
                 </section>
                 <section>
                      <p>Telefone</p>

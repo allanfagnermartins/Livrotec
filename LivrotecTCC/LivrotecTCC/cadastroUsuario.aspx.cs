@@ -18,6 +18,12 @@ namespace LivrotecTCC
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
+            if (BD.Usuarios.validarEmail(Email.Text)==1)
+            {
+                Email.Text = "";
+                erro.Text = "Email duplicado. Digite outro.";
+                return;
+            }
             if (Email.Text.Length > 200)
             {
                 erro.Text = "Email inválido. Máximo 200 caracteres.";
@@ -38,8 +44,14 @@ namespace LivrotecTCC
                 erro.Text = "Senha inválida. Máximo 64 caracteres.";
                 return;
             }
+            if (Email.Text != "" && Nome.Text != "" && Telefone.Text != "" && CPF.Text !="")
+            {
             BD.Usuarios.CriarUsuario(Email.Text, Senha.Text, Nome.Text, Telefone.Text, CPF.Text);
-
+            Email.Text = "";
+            Nome.Text = "";
+            Telefone.Text = "";
+            CPF.Text = "";
+            }
         }
     }
 }
